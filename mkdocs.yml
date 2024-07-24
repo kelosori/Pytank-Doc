@@ -1,0 +1,49 @@
+site_name: PyTank
+
+nav:
+  - Home: index.md
+  - Getting Started: nav/Getting-Started.md
+  - User Guide:
+      - nav/setup/user_guide.md
+  - Development:
+      - nav/development/development-guide.md
+      - nav/development/release-notes.md
+  - API reference:
+      - Overview: nav/API/api_reference.md
+      - Modules:
+          - Tank: nav/API/Tank.md
+
+theme:
+  name: simple-blog
+  favicon: static/Icon 2.ico
+  logo: static/Icon.png
+  theme_style: light
+  site_name_style: normal
+  title_style: bold
+  colors:
+    text: black
+    title: black
+    primary: black
+    background: white
+  components:
+    site_name: true
+    title: false
+    menu: true
+    preview: true
+    footer: true
+
+plugins:
+  - mkdocstrings
+
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: false
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  homepage: index.md
