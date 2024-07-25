@@ -3,11 +3,10 @@ site_name: PyTank
 nav:
   - Home: index.md
   - Getting Started: nav/Getting-Started.md
-  - User Guide:
-      - nav/setup/user_guide.md
+  - User Guide: nav/setup/user_guide.md
   - Development:
-      - nav/development/development-guide.md
-      - nav/development/release-notes.md
+      - nav/develop/develop-guide.md
+      - nav/develop/release-notes.md
   - API reference:
       - Overview: nav/API/api_reference.md
       - Modules:

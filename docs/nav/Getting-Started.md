@@ -1,41 +1,47 @@
+## **Python Version Support**
 
-## Project Philosophy
-Nowadays most processes and calculations are automated. There is a constant
-development of new computer programs, mobile
-applications, software, etc., that optimize processes.
+For now, full support is guaranteed for Python 3.8 and higher. Support is
+partial for Python 3.10
+See [Advanced Installation](develop/develop-guide) for more details.
 
-Accordingly, material balance has evolved by coding in different
-programming languages, giving way to various simulators and applications that
-determine the volume of hydrocarbons in
-place (Bakhty et al., 2020). One tool for the development of these programs is
-Python, a very high-level object-oriented
-programming language (Martínez Rafael et al., 2014).
+## **Installation**
 
-## Python Version Support
-
-For now, full support is guaranteed for Python 3.8 and higher. Support is partial for Python 3.10^
-See [Advanced Installation](../developer_guide/advanced_install.md) for more details.
-
-## Installation
-
-<div class="grid cards">
-  <div class="grid-item">
-    <div class="install-card">
-      <div class="card-content">
-        <h3>Installing Stable Release (v0.1.3)</h3>
-        <p>PyTank can be installed via pip from <a href="https://pypi.org/project/pytank">PyPI</a>.</p>
+<div class="card-container" style="display: flex; flex-wrap: wrap; gap: 20px; 
+    margin-top: 20px;">
+    <div class="intro-card" style="flex: 1 1 200px; border: 1px solid #ccc; 
+        padding: 20px; border-radius: 8px; text-align: center; box-shadow: 
+        0 4px 8px rgba(0,0,0,0.1);">
+        <h3 style="font-weight: bold;">Installing Stable Release (v0.1.3)</h3>
+        <p>PyTank can be installed via pip from <a href=
+            "https://pypi.org/project/pytank">PyPI</a>.</p>
         <pre><code>pip install pytank</code></pre>
-      </div>
     </div>
-  </div>
-  
-  <div class="grid-item">
-    <div class="card">
-      <div class="card-content">
-        <h3>Complete Installation Guide</h3>
-        <p>A complete walkthrough for beginners and some instructions for developers.</p>
-        <a href="../developer_guide/advanced_install.md" class="md-button md-button--primary">Learn More</a>
-      </div>
+    <div class="intro-card" style="flex: 1 1 200px; border: 1px solid #ccc; 
+        padding: 20px; border-radius: 8px; text-align: center; box-shadow: 
+        0 4px 8px rgba(0,0,0,0.1);">
+        <h3 style="font-weight: bold;">Complete Installation Guide</h3>
+        <p>A complete walkthrough for beginners and some instructions for 
+            developers.</p>
+        <a href="../developer_guide/advanced_install" class="button" 
+            style="background-color: #fee440; color: white; padding: 10px 15px; 
+            border-radius: 5px; text-decoration: none;">Learn more</a>
     </div>
-  </div>
 </div>
+
+## Our Philosophy
+
+Pytank is a [Python](https://www.python.org/) library for oil reserves
+estimation developed under a
+philosophy
+that promotes accessibility, innovation and sustainability. As an open source
+tool,
+it seeks to democratize knowledge and foster collaboration between researchers,
+students and professionals in the energy sector, eliminating economic barriers.
+
+The project focuses on simplifying and automating the reserves estimation
+process
+using the material balance method, allowing users to optimize their operations
+without the need for significant investments in commercial software. In
+addition,
+by improving estimation accuracy, it contributes to more sustainable practices,
+reducing the environmental impact of unnecessary drilling.
