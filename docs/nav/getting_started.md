@@ -1,8 +1,8 @@
-## **Python Version Support**
+# **Python Version Support**
 
-For now, full support is guaranteed for Python 3.8 and higher. Support is
-partial for Python 3.10
-See [Advanced Installation](develop/develop-guide) for more details.
+For now, full support is guaranteed for **Python 3.8** and higher. Support is
+partial for **Python 3.10**
+See [Develop Guide](/nav/develop/develop_guide/) for more details.
 
 ## **Installation**
 
@@ -22,26 +22,23 @@ See [Advanced Installation](develop/develop-guide) for more details.
         <h3 style="font-weight: bold;">Complete Installation Guide</h3>
         <p>A complete walkthrough for beginners and some instructions for 
             developers.</p>
-        <a href="../developer_guide/advanced_install" class="button" 
+        <a href="../develop/develop_guide" class="button" 
             style="background-color: #fee440; color: white; padding: 10px 15px; 
             border-radius: 5px; text-decoration: none;">Learn more</a>
     </div>
 </div>
 
-## Our Philosophy
+## **Our Philosophy**
 
-Pytank is a [Python](https://www.python.org/) library for oil reserves
-estimation developed under a
-philosophy
-that promotes accessibility, innovation and sustainability. As an open source
-tool,
-it seeks to democratize knowledge and foster collaboration between researchers,
-students and professionals in the energy sector, eliminating economic barriers.
+Pytank is a **Python** library for oil reserves
+estimation developed under a philosophy that promotes accessibility, innovation
+and sustainability. As an open source tool, it seeks to democratize knowledge
+and foster collaboration between researchers, students and professionals in the
+energy sector, eliminating economic barriers.
 
 The project focuses on simplifying and automating the reserves estimation
-process
-using the material balance method, allowing users to optimize their operations
-without the need for significant investments in commercial software. In
-addition,
-by improving estimation accuracy, it contributes to more sustainable practices,
-reducing the environmental impact of unnecessary drilling.
+process using the material balance method, allowing users to optimize their
+operations without the need for significant investments in commercial software.
+In addition, by improving estimation accuracy, it contributes to more
+sustainable practices, reducing the environmental impact of unnecessary
+drilling.

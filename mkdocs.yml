@@ -2,18 +2,33 @@ site_name: PyTank
 
 nav:
   - Home: index.md
-  - Getting Started: nav/Getting-Started.md
-  - User Guide: nav/setup/user_guide.md
+  - Getting Started: nav/getting_started.md
+  - User Guide:
+      - nav/setup/user_guide.md
+      - nav/setup/quick_starter.ipynb
+      - Create your items:
+          - How to create a Well?: nav/setup/well.md
+          - Which fluid models do I need??: nav/setup/fluid_model.md
+          - How to create a Tank?: nav/setup/tank.md
+          - Analyzing with Pytank: nav/setup/analysis.md
+          - Let´s create an Aquifer: nav/setup/aquifer.md
   - Development:
-      - nav/develop/develop-guide.md
-      - nav/develop/release-notes.md
+      - nav/develop/develop_guide.md
+      - nav/develop/release_notes.md
   - API reference:
       - Overview: nav/API/api_reference.md
-      - Modules:
-          - Tank: nav/API/Tank.md
+      - Main Modules:
+          - Well: nav/API/well_api.md
+          - Fluid Model: nav/API/fluid_model_api.md
+          - Tank: nav/API/tank_api.md
+          - Aquifer: nav/API/aquifer_api.md
+      - Secondary Modules:
+          - Helpers: nav/API/helpers.md
+          - Vectors: nav/API/vector_data.md
+
 
 theme:
-  name: simple-blog
+  name: material
   favicon: static/Icon 2.ico
   logo: static/Icon.png
   theme_style: light
@@ -33,6 +48,7 @@ theme:
 
 plugins:
   - mkdocstrings
+  - mkdocs-jupyter
 
 
 markdown_extensions:

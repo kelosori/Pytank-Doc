@@ -13,7 +13,7 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
 
 <div class="card-container" style="display: flex; flex-wrap: nowrap; gap: 50px; 
     margin-top: 20px;">
-    <a href="nav/Getting-Started" class="intro-card" style="flex: 1 1 200px; 
+    <a href="nav/getting_started/" class="intro-card" style="flex: 1 1 200px; 
         border: 1px solid #ccc; padding: 20px; border-radius: 8px; text-align: 
         center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); aspect-ratio: 1; display: 
         flex; flex-direction: column; justify-content: space-around; 
@@ -27,7 +27,7 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
             transition: transform 0.3s ease;"> To the getting started guide 
         </span>
     </a>
-    <a href="nav/setup/user_guide" class="intro-card" style="flex: 1 1 200px; 
+    <a href="nav/setup/user_guide/" class="intro-card" style="flex: 1 1 200px; 
         border: 1px solid #ccc; padding: 20px; border-radius: 8px; text-align: 
         center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); aspect-ratio: 1; 
         display: flex; flex-direction: column; justify-content: space-around; 
@@ -36,11 +36,11 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
             100%; height: auto; border-radius: 8px 8px 0 0;">
         <h3>User Guide</h3>
         <p>Detailed documentation for users on how to use the project.</p>
-        <span class="button" style="background-color: #fee440; color: black; 
+        <span class="button" style="background-color: #52b788; color: black; 
             padding: 10px 15px; border-radius: 5px; text-decoration: none; 
             transition: transform 0.3s ease;"> To the user guide </span>
     </a>
-    <a href="nav/API/api_reference" class="intro-card" style="flex: 1 1 200px; 
+    <a href="nav/API/api_reference/" class="intro-card" style="flex: 1 1 200px; 
         border: 1px solid #ccc; padding: 20px; border-radius: 8px; text-align: 
         center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); aspect-ratio: 1; display: 
         flex; flex-direction: column; justify-content: space-around; 
@@ -54,7 +54,7 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
             padding: 10px 15px; border-radius: 5px; text-decoration: none; 
             transition: transform 0.3s ease;"> To the reference guide </span>
     </a>
-    <a href="nav/develop/development-guide" class="intro-card" 
+    <a href="nav/develop/develop_guide/" class="intro-card" 
         style="flex: 1 1 200px; border: 1px solid #ccc; padding: 20px; 
         border-radius: 8px; text-align: center; 
         box-shadow: 0 4px 8px rgba(0,0,0,0.1); aspect-ratio: 1; display: flex; 
@@ -64,7 +64,7 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
             100%; height: auto; border-radius: 8px 8px 0 0;">
         <h3>Developer Guide</h3>
         <p>Guide for developers on how to contribute to the project.</p>
-        <span class="button" style="background-color: #fee440; color: black; 
+        <span class="button" style="background-color: #52b788; color: black; 
             padding: 10px 15px; border-radius: 5px; text-decoration: none; 
             transition: transform 0.3s ease;"> To the development guide </span>
     </a>
