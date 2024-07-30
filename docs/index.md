@@ -1,5 +1,7 @@
 # **Welcome to MkDocs**
 
+![Figure 1](/static/Icon.png)
+
 A tool for estimating the original volume of oil in reserves by using an
 object-oriented programming approach (POO).
 
@@ -10,6 +12,8 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
 [![image](https://img.shields.io/pypi/pyversions/pytank)](https://img.shields.io/pypi/pyversions/pytank)
 [![image](https://github.com/reservoirpy/reservoirpy/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/reservoirpy/reservoirpy/actions/workflows/test.yml/badge.svg?branch=master)
 [![image](https://codecov.io/gh/reservoirpy/reservoirpy/branch/master/graph/badge.svg?token=JC8R1PB5EO)](https://codecov.io/gh/reservoirpy/reservoirpy/branch/master/graph/badge.svg?token=JC8R1PB5EO)
+
+
 
 <div class="card-container-1" style="display: flex; flex-wrap: wrap; gap: 50px; 
     margin-top: 20px; justify-content: center;">

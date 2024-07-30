@@ -1,2 +1,2 @@
-# Helpers Functions
+# **Helpers Functions**
 ::: pytank.functions.helpers

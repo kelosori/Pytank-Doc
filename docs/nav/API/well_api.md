@@ -1,2 +1,2 @@
-# Helpers Functions
+# **Well Module**
 ::: pytank.well

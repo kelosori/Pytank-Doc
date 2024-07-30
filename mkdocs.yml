@@ -8,7 +8,7 @@ nav:
       - nav/setup/quick_starter.ipynb
       - Create your items:
           - How to create a Well?: nav/setup/well.md
-          - Which fluid models do I need??: nav/setup/fluid_model.md
+          - Which fluid models do I need?: nav/setup/fluid_model.md
           - How to create a Tank?: nav/setup/tank.md
           - Analyzing with Pytank: nav/setup/analysis.md
           - Let´s create an Aquifer: nav/setup/aquifer.md
@@ -62,3 +62,6 @@ markdown_extensions:
 
 extra:
   homepage: index.md
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML

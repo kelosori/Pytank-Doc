@@ -59,6 +59,23 @@ critical components in this analysis for several reasons:
 
 ## **Campbell Method**
 
+In a real case, many times there will be no information about the presence or absence of
+an aquifer and its characteristics. If you do not have an accurate description of the
+aquifer, you cannot get a more realistic prediction of the behavior of the reservoir.
+
+![Figure 1](/static/campbell_plot.png)
+
+- **<span style="color:sienna">Horizontal straight line</span>**: indicates a purely
+  volumetric system without any water influx. The reservoir's energy comes exclusively
+  from the expansion of oil, dissolved gas in the liquid, and the standard component of
+  compaction drive.
+- **<span style="color:red">Slight upward trend</span>**: implies that the reservoir has
+  been supported by a moderate water drive.
+- **<span style="color:blue">Steep upward trend</span>**: indicates a robust water-drive
+  system where the aquifer exhibits infinite-acting characteristics.
+- **<span style="color:navy">Declining trend</span>**: suggests the presence of a weak
+  water drive.
+
 The Campbell method is used in reservoir engineering to analyze the energy
 contribution of an aquifer in relation to oil production. This method allows the
 relationship between cumulative oil production (Np) and aquifer energy (F/Eo +
@@ -76,12 +93,68 @@ contributes to oil recovery. This is essential for:
 - **Evaluating reserves**: The method helps estimate the volume of oil that can
   be recovered, which is crucial for production planning and reserve evaluation.
 
+## **Material Balance**
+
+The material balance equation is based on the principle of conservation of mass,
+establishing a relationship between the original volume of hydrocarbons and the volumes
+produced, as well as the changes in the properties of the fluids throughout the
+production process. This equation can be expressed as follows:
+
+![EBM](/static/material_balance_terms.png)
+
+To apply the material balance equation, the following must be considered:
+
+- Constant pore volume.
+- Thermodynamic equilibrium between reservoir fluids.
+- Processes at the same temperature.
+- Negligible formation and formation water compressibility effects.
+- Closed and homogeneous system.
+- Representative PVT information
+
 ## **Havlena-Odeh method**
 
-The Havlena-Odeh method is a technique used to analyse oil production in fields
-that are influenced by aquifers. This method is based on the relationship
-between aquifer energy and cumulative oil production, allowing the calculation
-of pressure and expected production based on historical data.
+The Havlena and Odeh method is fundamental to the material balance equation (MBE),
+especially in the context of petroleum reservoir engineering. This approach allows the
+EBM to be represented as a straight line, which facilitates the estimation of key
+parameters such as the original amount of oil in situ and reservoir behavior under
+different production conditions.
+
+The material balance equation was significantly reduced to the following equation.
+
+$$
+F = N (E_o + E_{fw} + m E_g) + W_e
+$$
+
+Where each term represents:
+
+- **F**: Fluids produced from the reservoir.
+- **N**: Original In Situ Oil (POES)
+- **Eo**: Oil expansion
+- **Efw**: Expansion of connate and formation water
+- **Eg**: Expansion of Gas
+- **m**: Gas layer
+- **We**: Water Influx
+
+For Sub-saturated Reservoirs, assuming that during the production process of a reservoir
+there is no injection of fluids to improve its production, from the equation described
+above several terms can be eliminated such as:
+
+- **m**: Being an under saturated reservoir there will be no associated gas layer.
+- **Rs** = **Rsi** = **Rp**: The gas is dissolved in the oil.
+- **We**: Assuming that initially there is no aquifer present.
+
+So equation would be expressed as follows for under saturated reservoir:
+
+$$
+F = N(E_o + E_{fw})
+$$
+
+From the equation developed, a theoretical graph is obtained that attempts to predict
+the behavior of an under saturated reservoir, in which the fluids produced by the
+reservoir (F) are related to the expansion of the fluids (Eo + Efw), where it is assumed
+that the slope must be an approximate value to the OOIP (N).
+
+![ho_ru](/static/ho_reservoir_undersaturated.png)
 
 The Havlena-Odeh method is essential in material balance analysis for the
 following reasons:
@@ -124,6 +197,25 @@ relationship between cumulative oil output (Np) and aquifer energy (F/Eo + Efw).
 This visualization is essential to understanding how the energy of the aquifer
 contributes to oil recovery.
 
+#### **Function campbell_plot**
+
+You can use this function to plot the relationship between Np and F/Eo + Efw, allowing
+you to visually assess the influence of the aquifer on production. In addition, you can
+choose to plot a regression line or a custom line to analyze specific trends.
+
+```
+fig = tank.campbell_plot(custom_line=True, x1=100, y1=0.5, x2=200, y2=0.6)
+```
+
+#### **Function campbell_data**
+
+Also allows to obtain a DataFrame with the data used for the Campbell plot, facilitating
+numerical analysis and data manipulation for reports or further studies.
+
+```
+campbell_df = tank.campbell_data()
+```
+
 ### **Havlena and Odeh Method**
 
 This graph allows you to calculate the OOIP (Original Oil in Place). There are
@@ -132,8 +224,27 @@ two options to create the chart:
 - Using the Campbell method, the presence of an aquifer can be inferred,
   indicating that a non-volumetric sub-saturated layer is being worked.
 - In the absence of an energy supply, it is considered a volumetric
-  sub-saturated
-  reservoir.
+  sub-saturated reservoir.
+
+#### **Function havlena_odeh_plot**
+
+You can use this function to visualize the relationship between Eo + Efw and F - We,
+helping to identify patterns and trends in production. A regression line or custom line
+can also be plotted for more detailed analysis.
+
+```
+fig_havlena = tank.havlena_odeh_plot(custom_line=False)
+```
+
+#### **Function Havlena_oded_data**
+
+This function will allow you to obtain a DataFrame containing the data used for the
+Havlena and Odeh plot, which will allow you to perform further analysis and perform
+additional calculations based on this data.
+
+```
+havlena_df = tank.havlena_oded_data()
+```
 
 ### **Analytical Method**
 
@@ -142,6 +253,20 @@ synthetic pressure. The inferred POES is relevant when the pressure observed in
 the reservoir shows a behavior similar to the calculated synthetic pressure. In
 this case, it can be confirmed that the POES is suitable for the matter balance
 equation.
+
+#### **Function analytic_method**
+
+Usage: this function allows to calculate the inferred POES and compare the observed
+pressure with the calculated pressure, using aquifer models such as Fetkovich and
+Carter-Tracy. This is essential to validate the reservoir model and optimize production.
+
+```
+pressure_data = tank.analytic_method(poes=5000, option=“data”)
+```
+
+```
+fig_pressure = tank.analytic_method(poes=5000, option=“plot”)
+```
 
 For more information on the Analysis class you can review its
 [documentation](/nav/API/analysis_api/).

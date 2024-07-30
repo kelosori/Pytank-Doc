@@ -34,6 +34,7 @@ additional information, don't hesitate to let me know
 ## **4. How to Create Your Items**
 
 - [How to create a Well?](/nav/setup/well/)
+- [Which fluid models do I need?](/nav/setup/fluid_model/)
 - [How to create a Tank?](/nav/setup/tank/)
 - [Analyzing with Pytank](/nav/setup/analysis/)
-- [Let´s create an Aquifer](/nav/setup/fluid_model/)
+- [Let´s create an Aquifer](/nav/setup/aquifer/)

@@ -17,6 +17,7 @@ mkdocstrings-python = "^1.10.7"
 black = "^24.4.2"
 jupyter = "^1.0.0"
 mkdocs-jupyter = "^0.24.8"
+pymdown-extensions = "^10.9"
 
 
 [build-system]
