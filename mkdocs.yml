@@ -29,12 +29,13 @@ nav:
       - Secondary Modules:
           - Helpers: nav/API/generated/helpers.md
           - Vectors: nav/API/generated/vector_data.md
-      - Others:
+      - Additionals:
           - PVT Correlations: nav/API/generated/pvt_correlations.md
+          - Material Balance: nav/API/generated/mbal_api.md
+          - Utilities: nav/API/generated/others.md
 
 theme:
   name: material
-
   palette:
       # Palette toggle for automatic mode
       - media: "(prefers-color-scheme)"
@@ -45,6 +46,7 @@ theme:
       # Palette toggle for light mode
       - media: "(prefers-color-scheme: light)"
         scheme: default
+        primary: light green
         toggle:
           icon: material/brightness-7
           name: Switch to dark mode
@@ -52,9 +54,11 @@ theme:
       # Palette toggle for dark mode
       - media: "(prefers-color-scheme: dark)"
         scheme: slate
+        primary: white
         toggle:
           icon: material/brightness-4
           name: Switch to system preference
+
   favicon: static/Icon 2.ico
   logo: static/Icon.png
   theme_style: light

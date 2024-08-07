@@ -54,8 +54,10 @@
 |                                         | `PressVector`                                                      | This class is used to handle pressure data with a specific scheme.            |
 |                                         | `ProdVector`                                                       | This class is used to handle production data with a specific scheme.          |
 
-## **Others**
+## **Additional Functions**
 
 - **[PVT Correlations](generated/pvt_correlations.md)**
+- **[Material Balance](generated/mbal_api.md)**
+- **[Utilities](generated/others.md)**
 
 
