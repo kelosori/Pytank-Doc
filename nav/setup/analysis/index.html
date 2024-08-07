@@ -1,0 +1,1605 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tank/">
+      
+      
+        <link rel="next" href="../aquifer/">
+      
+      
+      <link rel="icon" href="../../../../static/Icon 2.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Analyzing with Pytank - PyTank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#analyzing-with-pytank" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.md" title="PyTank" class="md-header__button md-logo" aria-label="PyTank" data-md-component="logo">
+      
+  <img src="../../../../static/Icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyTank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Analyzing with Pytank
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.md" title="PyTank" class="md-nav__button md-logo" aria-label="PyTank" data-md-component="logo">
+      
+  <img src="../../../../static/Icon.png" alt="logo">
+
+    </a>
+    PyTank
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pytank Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_starter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A quick start To Pytank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advance_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advance features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Create your items
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Create your items
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../well/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to create a Well?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluid_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Which fluid models do I need?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to create a Tank?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Analyzing with Pytank
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Analyzing with Pytank
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#average-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Average Pressure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#underground-withdrawal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Underground Withdrawal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importance-in-ooip-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importance in OOIP Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campbell-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campbell Method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material Balance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#havlena-odeh-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Havlena-Odeh method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campbell-method_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campbell Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Campbell Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-campbell_plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function campbell_plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-campbell_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function campbell_data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#havlena-and-odeh-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Havlena and Odeh Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Havlena and Odeh Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-havlena_odeh_plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function havlena_odeh_plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-havlena_oded_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Havlena_oded_data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytical Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytical Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-analytic_method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function analytic_method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aquifer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Let´s create an Aquifer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/develop_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Develop guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/api_reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Main Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Main Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/well_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Well
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/fluid_model_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/oil_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oil Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/water_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/tank_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/aquifer_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aquifer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/analysis_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Secondary Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Secondary Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/helpers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helpers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/vector_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/pvt_correlations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PVT Correlations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#average-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Average Pressure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#underground-withdrawal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Underground Withdrawal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importance-in-ooip-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importance in OOIP Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#campbell-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campbell Method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material Balance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#havlena-odeh-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Havlena-Odeh method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campbell-method_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campbell Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Campbell Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-campbell_plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function campbell_plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-campbell_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function campbell_data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#havlena-and-odeh-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Havlena and Odeh Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Havlena and Odeh Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-havlena_odeh_plot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function havlena_odeh_plot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-havlena_oded_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Havlena_oded_data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytical-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytical Method
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytical Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-analytic_method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function analytic_method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="analyzing-with-pytank"><strong>Analyzing with Pytank</strong></h1>
+<p>Pytank main objective is to estimate the original oil in place (OOIP), using
+the material balance as the main tool. That is why two important concepts have
+to be taken into account, which are the <strong>subsurface withdrawal</strong> and the
+<strong>average pressure</strong>.</p>
+<p>The calculation of average pressures and subway withdrawal are key concepts in
+reservoir engineering, especially when performing a material balance analysis
+and determining the behavior of a reservoir in terms of production and reserves.
+Below is a description of each, their relationship and their importance in the
+context of a reservoir's POES (Production, Operation, Efficiency and
+Sustainability) analysis.</p>
+<h2 id="average-pressure"><strong>Average Pressure</strong></h2>
+<p>The average pressure in a reservoir refers to the average pressure found in the
+reservoir during a given period. This calculation is made from pressure
+measurements taken at different times and locations within the reservoir. The
+average pressure is crucial to understanding how reservoir conditions vary as
+fluids are withdrawn.</p>
+<h2 id="underground-withdrawal"><strong>Underground Withdrawal</strong></h2>
+<p>Underground withdrawal refers to the amount of fluids (oil, gas and water) that
+are extracted from the reservoir through the wells. This calculation considers
+cumulative production and is used to evaluate the efficiency of resource
+extraction in the reservoir. Subsurface withdrawal is essential to determine how
+fluid withdrawal affects pressure and saturation in the reservoir.</p>
+<p>Average pressure and drawdown are interrelated in the analysis of reservoir
+behavior. As subsurface drawdown occurs, the pressure in the reservoir tends to
+decrease. This, in turn, can affect the reservoir's ability to continue
+producing fluids efficiently. Therefore, a proper analysis of both parameters is
+critical to understanding the state of the reservoir and predicting its future
+behavior.</p>
+<h2 id="importance-in-ooip-analysis"><strong>Importance in OOIP Analysis</strong></h2>
+<p>OOIP analysis focuses on the production, operation, efficiency and
+sustainability of a reservoir. Average pressure and subsurface withdrawal are
+critical components in this analysis for several reasons:</p>
+<ul>
+<li><strong>Reservoir Evaluation</strong>: Knowing the average pressure allows engineers to
+  estimate the original volume of oil and gas in the reservoir. This is
+  fundamental to production planning and reservoir management.</li>
+<li><strong>Production Optimization</strong>: Monitoring subsurface withdrawal helps engineers
+  adjust production strategies. If the subway withdrawal is too high and the
+  average pressure is decreasing rapidly, it may be necessary to change the
+  extraction technique or implement enhanced recovery methods.</li>
+<li><strong>Predicting Reservoir Behavior</strong>: By analyzing the relationship between
+  average
+  pressure and drawdown, engineers can predict how the reservoir will respond to
+  different production scenarios. This is essential for making informed
+  decisions about field operation.</li>
+<li><strong>Sustainability</strong>: Proper management of subsurface pressure and drawdown is
+  key to reservoir sustainability. Maintaining pressure at optimal levels helps
+  extend reservoir life and maximize resource recovery.</li>
+</ul>
+<h2 id="campbell-method"><strong>Campbell Method</strong></h2>
+<p>In a real case, many times there will be no information about the presence or absence of
+an aquifer and its characteristics. If you do not have an accurate description of the
+aquifer, you cannot get a more realistic prediction of the behavior of the reservoir.</p>
+<p><img alt="Campbell" src="../../_static/analysis_module/campbell_plot.png" /></p>
+<ul>
+<li><strong><span style="color:sienna">Horizontal straight line</span></strong>: indicates a purely
+  volumetric system without any water influx. The reservoir's energy comes exclusively
+  from the expansion of oil, dissolved gas in the liquid, and the standard component of
+  compaction drive.</li>
+<li><strong><span style="color:red">Slight upward trend</span></strong>: implies that the reservoir has
+  been supported by a moderate water drive.</li>
+<li><strong><span style="color:blue">Steep upward trend</span></strong>: indicates a robust water-drive
+  system where the aquifer exhibits infinite-acting characteristics.</li>
+<li><strong><span style="color:navy">Declining trend</span></strong>: suggests the presence of a weak
+  water drive.</li>
+</ul>
+<p>The Campbell method is used in reservoir engineering to analyze the energy
+contribution of an aquifer in relation to oil production. This method allows the
+relationship between cumulative oil production (Np) and aquifer energy (F/Eo +
+Efw) to be graphed, making it easier to visualize how the aquifer affects
+reservoir production.</p>
+<p>The importance of the Campbell method lies in its ability to provide a graphical
+representation of the influence of the aquifer on oil production. By performing
+a material balance analysis, engineers can determine how aquifer energy
+contributes to oil recovery. This is essential for:</p>
+<ul>
+<li><strong>Optimizing production</strong>: Understanding the relationship between production
+  and aquifer energy allows engineers to adjust production strategies to
+  maximize hydrocarbon recovery.</li>
+<li><strong>Evaluating reserves</strong>: The method helps estimate the volume of oil that can
+  be recovered, which is crucial for production planning and reserve evaluation.</li>
+</ul>
+<h2 id="material-balance"><strong>Material Balance</strong></h2>
+<p>The material balance equation is based on the principle of conservation of mass,
+establishing a relationship between the original volume of hydrocarbons and the volumes
+produced, as well as the changes in the properties of the fluids throughout the
+production process. This equation can be expressed as follows:</p>
+<p><img alt="EBM" src="../../_static/analysis_module/material_balance_terms.png" /></p>
+<p>To apply the material balance equation, the following must be considered:</p>
+<ul>
+<li>Constant pore volume.</li>
+<li>Thermodynamic equilibrium between reservoir fluids.</li>
+<li>Processes at the same temperature.</li>
+<li>Negligible formation and formation water compressibility effects.</li>
+<li>Closed and homogeneous system.</li>
+<li>Representative PVT information</li>
+</ul>
+<h2 id="havlena-odeh-method"><strong>Havlena-Odeh method</strong></h2>
+<p>The Havlena and Odeh method is fundamental to the material balance equation (MBE),
+especially in the context of petroleum reservoir engineering. This approach allows the
+EBM to be represented as a straight line, which facilitates the estimation of key
+parameters such as the original amount of oil in situ and reservoir behavior under
+different production conditions.</p>
+<p>The material balance equation was significantly reduced to the following equation.</p>
+<p>$$
+F = N (E_o + E_{fw} + m E_g) + W_e
+$$</p>
+<p>Where each term represents:</p>
+<ul>
+<li><strong>F</strong>: Fluids produced from the reservoir.</li>
+<li><strong>N</strong>: Original In Situ Oil (POES)</li>
+<li><strong>Eo</strong>: Oil expansion</li>
+<li><strong>Efw</strong>: Expansion of connate and formation water</li>
+<li><strong>Eg</strong>: Expansion of Gas</li>
+<li><strong>m</strong>: Gas layer</li>
+<li><strong>We</strong>: Water Influx</li>
+</ul>
+<p>For Sub-saturated Reservoirs, assuming that during the production process of a reservoir
+there is no injection of fluids to improve its production, from the equation described
+above several terms can be eliminated such as:</p>
+<ul>
+<li><strong>m</strong>: Being an under saturated reservoir there will be no associated gas layer.</li>
+<li><strong>Rs</strong> = <strong>Rsi</strong> = <strong>Rp</strong>: The gas is dissolved in the oil.</li>
+<li><strong>We</strong>: Assuming that initially there is no aquifer present.</li>
+</ul>
+<p>So equation would be expressed as follows for under saturated reservoir:</p>
+<p>$$
+F = N(E_o + E_{fw})
+$$</p>
+<p>From the equation developed, a theoretical graph is obtained that attempts to predict
+the behavior of an under saturated reservoir, in which the fluids produced by the
+reservoir (F) are related to the expansion of the fluids (Eo + Efw), where it is assumed
+that the slope must be an approximate value to the OOIP (N).</p>
+<p><img alt="ho_ru" src="../../_static/analysis_module/ho_reservoir_undersaturated.png" /></p>
+<p>The Havlena-Odeh method is essential in material balance analysis for the
+following reasons:</p>
+<ul>
+<li><strong>Calculation of OOIP</strong>: This method allows the calculation of the inferred
+  OOIP (Original-Oil-in-Place), which is essential for assessing the amount of
+  oil that can be recovered from a field. Accuracy in the estimation of POES is
+  vital for planning and decision-making in the exploitation of the field.</li>
+<li><strong>Comparison of pressures</strong>: The method allows the comparison of observed
+  pressure with calculated pressure, helping to identify discrepancies that may
+  indicate problems in the field or in the modelling of the aquifer.</li>
+<li><strong>Aquifer modeling</strong>: By incorporating aquifer models such as Fetkovich and
+  Carter-Tracy, the method provides a robust framework for understanding how the
+  aquifer affects oil production, which is crucial for effective resource
+  management.</li>
+</ul>
+<h2 id="analysis-class"><strong>Analysis Class</strong></h2>
+<p>The Analysis class includes a private method called <code>_pressure_vol_avg</code>, which
+is responsible for calculating the average pressure in the reservoir. This
+method uses underground pressure and withdrawal data to determine the average
+pressure over time. Average pressure is crucial to understanding how fluid
+extraction affects reservoir conditions and to predict future reservoir
+behavior.</p>
+<p>The class also includes a private method called <code>_calc_uw</code>, which calculates
+underground withdrawal per well. This method combines production and pressure
+data to determine how much fluid has been removed from the reservoir.
+Underground removal is essential to assess production efficiency and how it
+affects pressure in the reservoir.</p>
+<p>Pytank allows you to use two important graphical methods in the process so that
+you can perform the respective analysis of your data: <code>Campbell</code> and
+<code>Havlena &amp; Odeh</code>.</p>
+<h3 id="campbell-method_1"><strong>Campbell Method</strong></h3>
+<p>The campbell_plot function generates a Campbell chart that illustrates the
+relationship between cumulative oil output (Np) and aquifer energy (F/Eo + Efw).
+This visualization is essential to understanding how the energy of the aquifer
+contributes to oil recovery.</p>
+<h4 id="function-campbell_plot"><strong>Function campbell_plot</strong></h4>
+<p>You can use this function to plot the relationship between Np and F/Eo + Efw, allowing
+you to visually assess the influence of the aquifer on production. In addition, you can
+choose to plot a regression line or a custom line to analyze specific trends.</p>
+<pre><code>fig = tank.campbell_plot(custom_line=True, x1=100, y1=0.5, x2=200, y2=0.6)
+</code></pre>
+<h4 id="function-campbell_data"><strong>Function campbell_data</strong></h4>
+<p>Also allows to obtain a DataFrame with the data used for the Campbell plot, facilitating
+numerical analysis and data manipulation for reports or further studies.</p>
+<pre><code>campbell_df = tank.campbell_data()
+</code></pre>
+<h3 id="havlena-and-odeh-method"><strong>Havlena and Odeh Method</strong></h3>
+<p>This graph allows you to calculate the OOIP (Original Oil in Place). There are
+two options to create the chart:</p>
+<ul>
+<li>Using the Campbell method, the presence of an aquifer can be inferred,
+  indicating that a non-volumetric sub-saturated layer is being worked.</li>
+<li>In the absence of an energy supply, it is considered a volumetric
+  sub-saturated reservoir.</li>
+</ul>
+<h4 id="function-havlena_odeh_plot"><strong>Function havlena_odeh_plot</strong></h4>
+<p>You can use this function to visualize the relationship between Eo + Efw and F - We,
+helping to identify patterns and trends in production. A regression line or custom line
+can also be plotted for more detailed analysis.</p>
+<pre><code>fig_havlena = tank.havlena_odeh_plot(custom_line=False)
+</code></pre>
+<h4 id="function-havlena_oded_data"><strong>Function Havlena_oded_data</strong></h4>
+<p>This function will allow you to obtain a DataFrame containing the data used for the
+Havlena and Odeh plot, which will allow you to perform further analysis and perform
+additional calculations based on this data.</p>
+<pre><code>havlena_df = tank.havlena_oded_data()
+</code></pre>
+<h3 id="analytical-method"><strong>Analytical Method</strong></h3>
+<p>This method is based on an inferred OOIP, which is used to recalculate a
+synthetic pressure. The inferred POES is relevant when the pressure observed in
+the reservoir shows a behavior similar to the calculated synthetic pressure. In
+this case, it can be confirmed that the POES is suitable for the matter balance
+equation.</p>
+<h4 id="function-analytic_method"><strong>Function analytic_method</strong></h4>
+<p>Usage: this function allows to calculate the inferred POES and compare the observed
+pressure with the calculated pressure, using aquifer models such as Fetkovich and
+Carter-Tracy. This is essential to validate the reservoir model and optimize production.</p>
+<pre><code>pressure_data = tank.analytic_method(poes=5000, option=“data”)
+</code></pre>
+<pre><code>fig_pressure = tank.analytic_method(poes=5000, option=“plot”)
+</code></pre>
+<p>For more information on the Analysis class you can review its
+<a href="../../API/generated/analysis_api/">documentation</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+  </body>
+</html>

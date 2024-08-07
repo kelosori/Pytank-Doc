@@ -1,0 +1,3328 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tank_api/">
+      
+      
+        <link rel="next" href="../analysis_api/">
+      
+      
+      <link rel="icon" href="../../../../../static/Icon 2.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Aquifer - PyTank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aquifer-module" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../index.md" title="PyTank" class="md-header__button md-logo" aria-label="PyTank" data-md-component="logo">
+      
+  <img src="../../../../../static/Icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyTank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Aquifer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../index.md" title="PyTank" class="md-nav__button md-logo" aria-label="PyTank" data-md-component="logo">
+      
+  <img src="../../../../../static/Icon.png" alt="logo">
+
+    </a>
+    PyTank
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/user_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pytank Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/quick_starter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A quick start To Pytank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/advance_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advance features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Create your items
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Create your items
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/well/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to create a Well?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/fluid_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Which fluid models do I need?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/tank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to create a Tank?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analyzing with Pytank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/aquifer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Let´s create an Aquifer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../develop/develop_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Develop guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../develop/release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api_reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Main Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Main Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../well_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Well
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluid_model_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oil_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oil Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../water_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tank_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Aquifer
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Aquifer
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pytank.aquifer_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      aquifer_model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      CarterTracy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CarterTracy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy.__init__--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy.get_we" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_we
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy.we" class="md-nav__link">
+    <span class="md-ellipsis">
+      we
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetkovich
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fetkovich">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich.__init__--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich.get_we" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_we
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich.we" class="md-nav__link">
+    <span class="md-ellipsis">
+      we
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Secondary Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Secondary Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helpers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helpers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vector_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pvt_correlations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PVT Correlations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pytank.aquifer_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      aquifer_model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      CarterTracy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CarterTracy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy.__init__--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy.get_we" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_we
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.CarterTracy.we" class="md-nav__link">
+    <span class="md-ellipsis">
+      we
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetkovich
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fetkovich">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich.__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __init__
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="__init__">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich.__init__--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich.get_we" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_we
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pytank.aquifer_model.Fetkovich.we" class="md-nav__link">
+    <span class="md-ellipsis">
+      we
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="aquifer-module"><strong>Aquifer Module</strong></h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="pytank.aquifer_model"></a>
+    <div class="doc doc-contents first">
+
+      <p>aquifer_model.py</p>
+<p>This module defines the Fetkovich and CarterTracy Class to calculate
+cumulative influx of water.</p>
+<p>The logic is structured using classes and method</p>
+
+
+<details class="libraries" open>
+  <summary>libraries</summary>
+  <ul>
+<li>pandas</li>
+<li>math</li>
+<li>numpy</li>
+</ul>
+</details>
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="pytank.aquifer_model.CarterTracy" class="doc doc-heading">
+            <code>CarterTracy</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+      <p>Class to calculate the cumulative influx of water through Carter Tracy
+aquifer model.</p>
+<h4 id="pytank.aquifer_model.CarterTracy--parameters">Parameters</h4>
+<p>aq_por : float
+    Porosity of the aquifer (decimal).
+ct : float
+    Total compressibility, psi^-1.
+res_radius : float
+    Radius of the reservoir, ft.
+aq_thickness : float
+    Thickness of the aquifer, ft.
+theta : float
+    Encroachment angle, degrees.
+aq_perm : float
+    Permeability of the aquifer, md.
+water_visc : float
+    Viscosity of water, cp.
+pr : list, optional
+    List of Measured reservoir pressure, psi.
+time_step : list, optional
+    Time lapses, days.</p>
+<h4 id="pytank.aquifer_model.CarterTracy--returns">Returns</h4>
+<p>pandas.DataFrame
+    Containing the cumulative water influx, bbl.</p>
+
+              <details class="quote">
+                <summary>Source code in <code>pytank\aquifer_model.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span>
+<span class="normal">386</span>
+<span class="normal">387</span>
+<span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span>
+<span class="normal">489</span>
+<span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">CarterTracy</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class to calculate the cumulative influx of water through Carter Tracy</span>
+<span class="sd">    aquifer model.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    aq_por : float</span>
+<span class="sd">        Porosity of the aquifer (decimal).</span>
+<span class="sd">    ct : float</span>
+<span class="sd">        Total compressibility, psi^-1.</span>
+<span class="sd">    res_radius : float</span>
+<span class="sd">        Radius of the reservoir, ft.</span>
+<span class="sd">    aq_thickness : float</span>
+<span class="sd">        Thickness of the aquifer, ft.</span>
+<span class="sd">    theta : float</span>
+<span class="sd">        Encroachment angle, degrees.</span>
+<span class="sd">    aq_perm : float</span>
+<span class="sd">        Permeability of the aquifer, md.</span>
+<span class="sd">    water_visc : float</span>
+<span class="sd">        Viscosity of water, cp.</span>
+<span class="sd">    pr : list, optional</span>
+<span class="sd">        List of Measured reservoir pressure, psi.</span>
+<span class="sd">    time_step : list, optional</span>
+<span class="sd">        Time lapses, days.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        Containing the cumulative water influx, bbl.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">aq_por</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">ct</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">res_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">aq_thickness</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">theta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">aq_perm</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">water_visc</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">pr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">time_step</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initializes the attributes of the CarterTracy class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        aq_por : float</span>
+<span class="sd">            Porosity of the aquifer (decimal).</span>
+<span class="sd">        ct : float</span>
+<span class="sd">            Total compressibility, psi^-1.</span>
+<span class="sd">        res_radius : float</span>
+<span class="sd">            Radius of the reservoir, ft.</span>
+<span class="sd">        aq_thickness : float</span>
+<span class="sd">            Thickness of the aquifer, ft.</span>
+<span class="sd">        theta : float</span>
+<span class="sd">            Encroachment angle, degrees.</span>
+<span class="sd">        aq_perm : float</span>
+<span class="sd">            Permeability of the aquifer, md.</span>
+<span class="sd">        water_visc : float</span>
+<span class="sd">            Viscosity of water, cp.</span>
+<span class="sd">        pr : list, optional</span>
+<span class="sd">            Measured reservoir pressure, psi.</span>
+<span class="sd">        time_step : list, optional</span>
+<span class="sd">            Time lapses, days.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span> <span class="o">=</span> <span class="n">aq_por</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">=</span> <span class="n">ct</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">=</span> <span class="n">res_radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">=</span> <span class="n">aq_thickness</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aq_perm</span> <span class="o">=</span> <span class="n">aq_perm</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">=</span> <span class="n">water_visc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time_step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span>
+
+    <span class="k">def</span> <span class="nf">_set_pr_and_time_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pr</span><span class="p">,</span> <span class="n">time_step</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Private method to assign value to the pr and time_step</span>
+<span class="sd">        properties of the aquifer Carter Tracy</span>
+<span class="sd">        :param</span>
+<span class="sd">        pr: List of Measured reservoir pressure, psi.</span>
+<span class="sd">        time_step: List of Time lapses, days.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_step</span> <span class="o">=</span> <span class="n">time_step</span>
+        <span class="c1"># Check if the time list is in datetime format</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">):</span>
+            <span class="c1"># If all elements are already datetime objects, convert to -</span>
+            <span class="c1"># cumulative days</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">time_step</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">days</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">):</span>
+            <span class="c1"># If elements are Timestamp objects, convert to datetime and then -</span>
+            <span class="c1"># to cumulative days</span>
+            <span class="n">datetime_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">datetime_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">days</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">datetime_list</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">):</span>
+            <span class="c1"># If all elements are strings, convert to datetime and then -</span>
+            <span class="c1"># to cumulative days</span>
+            <span class="n">datetime_list</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span>
+            <span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">datetime_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">days</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">datetime_list</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Convert dates to cumulative days using variable_types</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="n">time_step</span><span class="p">)</span>
+
+        <span class="c1"># Automatically influx of water data upon object creation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">we</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">we</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method to calculate cumulative influx of water and gets the values -</span>
+<span class="sd">        in a DataFrame.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        pd.Dataframe: DataFrame wit the delta WE, Cumulative WE and time</span>
+<span class="sd">        lapses columns.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Check if pressure and time are arrays, lists or floats</span>
+        <span class="n">pr_array</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">)</span>
+        <span class="n">t_array</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+
+        <span class="c1"># Check if pressure array is not in descendant order throw an error</span>
+        <span class="c1"># if not all(pr_array[i] &gt;= pr_array[i + 1]</span>
+        <span class="c1">#           for i in range(len(pr_array) - 1)):</span>
+        <span class="c1">#    raise ValueError(&quot;Pressure array must be in descendant order&quot;)</span>
+
+        <span class="c1"># Check if pressure array is not in descendant order throw an error</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">pr_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pressure must be greater than zero&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Check if time step and pressure dimensions are equal</span>
+        <span class="c1"># this can be done if time step is entered as array</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pr_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span>
+                <span class="n">t_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">dim_pr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">pr_array</span><span class="p">)</span>
+            <span class="n">dim_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">t_array</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">dim_pr</span> <span class="o">!=</span> <span class="n">dim_time</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Dimensions of pressure array and time array &quot;</span>
+                                 <span class="s2">&quot;should be equal,&quot;</span>
+                                 <span class="s2">&quot;please verify your input&quot;</span><span class="p">)</span>
+        <span class="c1"># Calculate the van Everdingen-Hurst water influx constant</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta</span> <span class="o">/</span> <span class="mi">360</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mf">1.119</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">**</span>
+                                             <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span> <span class="n">f</span>
+        <span class="c1"># Estimate dimensionless time (tD)</span>
+        <span class="n">cte</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.006328</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_perm</span> <span class="o">/</span>
+               <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">*</span>
+                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
+        <span class="n">td</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">t_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t_array</span> <span class="o">*</span> <span class="n">cte</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the total pressure drop (Pi-Pn) as an array, for each  -</span>
+        <span class="c1"># time step n.</span>
+        <span class="n">pr_drop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pr_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pr_array</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Estimate the dimensionless pressure</span>
+        <span class="n">pr_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+            <span class="n">td</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">td</span><span class="p">,</span> <span class="mf">1e-15</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.80907</span><span class="p">),</span>
+            <span class="p">((</span><span class="mf">370.529</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">td</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">137.582</span> <span class="o">*</span> <span class="n">td</span><span class="p">)</span> <span class="o">+</span>
+             <span class="p">(</span><span class="mf">5.69549</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">**</span> <span class="mf">1.5</span><span class="p">)))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">328.834</span> <span class="o">+</span> <span class="p">(</span><span class="mf">265.488</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">td</span><span class="p">))</span> <span class="o">+</span>
+                                         <span class="p">(</span><span class="mf">45.2157</span> <span class="o">*</span> <span class="n">td</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">td</span> <span class="o">**</span> <span class="mf">1.5</span><span class="p">)),</span>
+        <span class="p">)</span>
+        <span class="c1"># Estimate the dimensionless pressure derivative</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="mf">716.441</span> <span class="o">+</span> <span class="p">(</span><span class="mf">46.7984</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">270.038</span> <span class="o">*</span> <span class="n">td</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">71.0098</span> <span class="o">*</span>
+                                                                 <span class="p">(</span><span class="n">td</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">))</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">((</span><span class="mf">1296.86</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1204.73</span> <span class="o">*</span> <span class="n">td</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">618.618</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">))</span>
+             <span class="o">+</span> <span class="p">(</span><span class="mf">538.072</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">142.41</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">**</span> <span class="mf">2.5</span><span class="p">)))</span>
+        <span class="n">pr_deriv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">td</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">td</span><span class="p">,</span> <span class="mf">1e-15</span><span class="p">)),</span>
+                            <span class="n">e</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mf">1e-15</span><span class="p">))</span>
+
+        <span class="c1"># Calculate the cumulative water influx at any time, ti</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Cumulative We&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+        <span class="n">we</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">td</span><span class="p">)):</span>
+            <span class="n">a1</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">td</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">a2</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">pr_drop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">a3</span> <span class="o">=</span> <span class="n">we</span> <span class="o">*</span> <span class="n">pr_deriv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">a4</span> <span class="o">=</span> <span class="n">pr_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">a5</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">pr_deriv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">cum_influx_water</span> <span class="o">=</span> <span class="n">we</span> <span class="o">+</span> <span class="p">(</span><span class="n">a1</span> <span class="o">*</span> <span class="p">((</span><span class="n">a2</span> <span class="o">-</span> <span class="n">a3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a4</span> <span class="o">-</span> <span class="n">a5</span><span class="p">)))</span>
+            <span class="n">we</span> <span class="o">=</span> <span class="n">cum_influx_water</span>
+            <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cumulative We&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">we</span><span class="p">)</span>
+
+        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Elapsed time, days&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_array</span>
+
+        <span class="c1"># Concatenation of the DataFrames in a unique final DataFrame</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">)],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">df</span>
+
+    <span class="k">def</span> <span class="nf">get_we</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method than encapsulated a DataFrame to gets an only column of</span>
+<span class="sd">        Cumulative We.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        pd.Series: A column of values of Cumulative We</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">we</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">we</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">we</span><span class="p">[</span><span class="s2">&quot;Cumulative We&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pytank.aquifer_model.CarterTracy.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">aq_por</span><span class="p">,</span> <span class="n">ct</span><span class="p">,</span> <span class="n">res_radius</span><span class="p">,</span> <span class="n">aq_thickness</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">aq_perm</span><span class="p">,</span> <span class="n">water_visc</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">time_step</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Initializes the attributes of the CarterTracy class.</p>
+<h5 id="pytank.aquifer_model.CarterTracy.__init__--parameters">Parameters</h5>
+<p>aq_por : float
+    Porosity of the aquifer (decimal).
+ct : float
+    Total compressibility, psi^-1.
+res_radius : float
+    Radius of the reservoir, ft.
+aq_thickness : float
+    Thickness of the aquifer, ft.
+theta : float
+    Encroachment angle, degrees.
+aq_perm : float
+    Permeability of the aquifer, md.
+water_visc : float
+    Viscosity of water, cp.
+pr : list, optional
+    Measured reservoir pressure, psi.
+time_step : list, optional
+    Time lapses, days.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>pytank\aquifer_model.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span>
+<span class="normal">354</span>
+<span class="normal">355</span>
+<span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">aq_por</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">ct</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">res_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">aq_thickness</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">theta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">aq_perm</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">water_visc</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">pr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">time_step</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes the attributes of the CarterTracy class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    aq_por : float</span>
+<span class="sd">        Porosity of the aquifer (decimal).</span>
+<span class="sd">    ct : float</span>
+<span class="sd">        Total compressibility, psi^-1.</span>
+<span class="sd">    res_radius : float</span>
+<span class="sd">        Radius of the reservoir, ft.</span>
+<span class="sd">    aq_thickness : float</span>
+<span class="sd">        Thickness of the aquifer, ft.</span>
+<span class="sd">    theta : float</span>
+<span class="sd">        Encroachment angle, degrees.</span>
+<span class="sd">    aq_perm : float</span>
+<span class="sd">        Permeability of the aquifer, md.</span>
+<span class="sd">    water_visc : float</span>
+<span class="sd">        Viscosity of water, cp.</span>
+<span class="sd">    pr : list, optional</span>
+<span class="sd">        Measured reservoir pressure, psi.</span>
+<span class="sd">    time_step : list, optional</span>
+<span class="sd">        Time lapses, days.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span> <span class="o">=</span> <span class="n">aq_por</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">=</span> <span class="n">ct</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">=</span> <span class="n">res_radius</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">=</span> <span class="n">aq_thickness</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">aq_perm</span> <span class="o">=</span> <span class="n">aq_perm</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">=</span> <span class="n">water_visc</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">time_step</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pytank.aquifer_model.CarterTracy.get_we" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_we</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Method than encapsulated a DataFrame to gets an only column of
+Cumulative We.</p>
+<p>:return:
+pd.Series: A column of values of Cumulative We</p>
+
+            <details class="quote">
+              <summary>Source code in <code>pytank\aquifer_model.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">490</span>
+<span class="normal">491</span>
+<span class="normal">492</span>
+<span class="normal">493</span>
+<span class="normal">494</span>
+<span class="normal">495</span>
+<span class="normal">496</span>
+<span class="normal">497</span>
+<span class="normal">498</span>
+<span class="normal">499</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_we</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Method than encapsulated a DataFrame to gets an only column of</span>
+<span class="sd">    Cumulative We.</span>
+
+<span class="sd">    :return:</span>
+<span class="sd">    pd.Series: A column of values of Cumulative We</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">we</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">we</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">we</span><span class="p">[</span><span class="s2">&quot;Cumulative We&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pytank.aquifer_model.CarterTracy.we" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">we</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Method to calculate cumulative influx of water and gets the values -
+in a DataFrame.</p>
+<p>:return:
+pd.Dataframe: DataFrame wit the delta WE, Cumulative WE and time
+lapses columns.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>pytank\aquifer_model.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span>
+<span class="normal">444</span>
+<span class="normal">445</span>
+<span class="normal">446</span>
+<span class="normal">447</span>
+<span class="normal">448</span>
+<span class="normal">449</span>
+<span class="normal">450</span>
+<span class="normal">451</span>
+<span class="normal">452</span>
+<span class="normal">453</span>
+<span class="normal">454</span>
+<span class="normal">455</span>
+<span class="normal">456</span>
+<span class="normal">457</span>
+<span class="normal">458</span>
+<span class="normal">459</span>
+<span class="normal">460</span>
+<span class="normal">461</span>
+<span class="normal">462</span>
+<span class="normal">463</span>
+<span class="normal">464</span>
+<span class="normal">465</span>
+<span class="normal">466</span>
+<span class="normal">467</span>
+<span class="normal">468</span>
+<span class="normal">469</span>
+<span class="normal">470</span>
+<span class="normal">471</span>
+<span class="normal">472</span>
+<span class="normal">473</span>
+<span class="normal">474</span>
+<span class="normal">475</span>
+<span class="normal">476</span>
+<span class="normal">477</span>
+<span class="normal">478</span>
+<span class="normal">479</span>
+<span class="normal">480</span>
+<span class="normal">481</span>
+<span class="normal">482</span>
+<span class="normal">483</span>
+<span class="normal">484</span>
+<span class="normal">485</span>
+<span class="normal">486</span>
+<span class="normal">487</span>
+<span class="normal">488</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">we</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Method to calculate cumulative influx of water and gets the values -</span>
+<span class="sd">    in a DataFrame.</span>
+
+<span class="sd">    :return:</span>
+<span class="sd">    pd.Dataframe: DataFrame wit the delta WE, Cumulative WE and time</span>
+<span class="sd">    lapses columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Check if pressure and time are arrays, lists or floats</span>
+    <span class="n">pr_array</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">)</span>
+    <span class="n">t_array</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+
+    <span class="c1"># Check if pressure array is not in descendant order throw an error</span>
+    <span class="c1"># if not all(pr_array[i] &gt;= pr_array[i + 1]</span>
+    <span class="c1">#           for i in range(len(pr_array) - 1)):</span>
+    <span class="c1">#    raise ValueError(&quot;Pressure array must be in descendant order&quot;)</span>
+
+    <span class="c1"># Check if pressure array is not in descendant order throw an error</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">pr_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pressure must be greater than zero&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Check if time step and pressure dimensions are equal</span>
+    <span class="c1"># this can be done if time step is entered as array</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pr_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">t_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">dim_pr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">pr_array</span><span class="p">)</span>
+        <span class="n">dim_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">t_array</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dim_pr</span> <span class="o">!=</span> <span class="n">dim_time</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Dimensions of pressure array and time array &quot;</span>
+                             <span class="s2">&quot;should be equal,&quot;</span>
+                             <span class="s2">&quot;please verify your input&quot;</span><span class="p">)</span>
+    <span class="c1"># Calculate the van Everdingen-Hurst water influx constant</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta</span> <span class="o">/</span> <span class="mi">360</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mf">1.119</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">**</span>
+                                         <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span> <span class="n">f</span>
+    <span class="c1"># Estimate dimensionless time (tD)</span>
+    <span class="n">cte</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.006328</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_perm</span> <span class="o">/</span>
+           <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">*</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
+    <span class="n">td</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">t_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t_array</span> <span class="o">*</span> <span class="n">cte</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Calculate the total pressure drop (Pi-Pn) as an array, for each  -</span>
+    <span class="c1"># time step n.</span>
+    <span class="n">pr_drop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pr_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pr_array</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Estimate the dimensionless pressure</span>
+    <span class="n">pr_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+        <span class="n">td</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">td</span><span class="p">,</span> <span class="mf">1e-15</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.80907</span><span class="p">),</span>
+        <span class="p">((</span><span class="mf">370.529</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">td</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">137.582</span> <span class="o">*</span> <span class="n">td</span><span class="p">)</span> <span class="o">+</span>
+         <span class="p">(</span><span class="mf">5.69549</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">**</span> <span class="mf">1.5</span><span class="p">)))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">328.834</span> <span class="o">+</span> <span class="p">(</span><span class="mf">265.488</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">td</span><span class="p">))</span> <span class="o">+</span>
+                                     <span class="p">(</span><span class="mf">45.2157</span> <span class="o">*</span> <span class="n">td</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">td</span> <span class="o">**</span> <span class="mf">1.5</span><span class="p">)),</span>
+    <span class="p">)</span>
+    <span class="c1"># Estimate the dimensionless pressure derivative</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="mf">716.441</span> <span class="o">+</span> <span class="p">(</span><span class="mf">46.7984</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">270.038</span> <span class="o">*</span> <span class="n">td</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">71.0098</span> <span class="o">*</span>
+                                                             <span class="p">(</span><span class="n">td</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">))</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">((</span><span class="mf">1296.86</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1204.73</span> <span class="o">*</span> <span class="n">td</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">618.618</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">))</span>
+         <span class="o">+</span> <span class="p">(</span><span class="mf">538.072</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span><span class="mf">142.41</span> <span class="o">*</span> <span class="p">(</span><span class="n">td</span> <span class="o">**</span> <span class="mf">2.5</span><span class="p">)))</span>
+    <span class="n">pr_deriv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">td</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">td</span><span class="p">,</span> <span class="mf">1e-15</span><span class="p">)),</span>
+                        <span class="n">e</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mf">1e-15</span><span class="p">))</span>
+
+    <span class="c1"># Calculate the cumulative water influx at any time, ti</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Cumulative We&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+    <span class="n">we</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">td</span><span class="p">)):</span>
+        <span class="n">a1</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">td</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">a2</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">pr_drop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">a3</span> <span class="o">=</span> <span class="n">we</span> <span class="o">*</span> <span class="n">pr_deriv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">a4</span> <span class="o">=</span> <span class="n">pr_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">a5</span> <span class="o">=</span> <span class="n">td</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">pr_deriv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">cum_influx_water</span> <span class="o">=</span> <span class="n">we</span> <span class="o">+</span> <span class="p">(</span><span class="n">a1</span> <span class="o">*</span> <span class="p">((</span><span class="n">a2</span> <span class="o">-</span> <span class="n">a3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">a4</span> <span class="o">-</span> <span class="n">a5</span><span class="p">)))</span>
+        <span class="n">we</span> <span class="o">=</span> <span class="n">cum_influx_water</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Cumulative We&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">we</span><span class="p">)</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Elapsed time, days&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_array</span>
+
+    <span class="c1"># Concatenation of the DataFrames in a unique final DataFrame</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">)],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="pytank.aquifer_model.Fetkovich" class="doc doc-heading">
+            <code>Fetkovich</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+
+      <p>To estimate water influx using the Fetkovich's method we need to estimate:
+Wi, Wei and J.
+Parameters</p>
+<hr />
+<p>aq_radius : float
+    Radius of the aquifer, ft.
+res_radius : float
+    Radius of the reservoir, ft.
+aq_thickness : float
+    Thickness of the aquifer, ft.
+aq_por : float
+    Porosity of the aquifer.
+ct : float
+    Total compressibility coefficient, psi^-1.
+theta : float
+    Encroachment angle.
+k : float
+    Permeability of the aquifer, md.
+water_visc : float
+    Viscosity of water, cp.
+boundary_type : str, optional
+    Type of aquifer boundary, default is 'no_flow'. Options are 'no_flow',
+    'constant_pressure', 'infinite'.
+flow_type : str, optional
+    Type of flow, default is 'radial'. Options are 'radial', 'linear'.
+pr : list or numpy array, optional
+    Measured reservoir pressure, psi.
+time_step : list or numpy array, optional
+    Time step, days.
+width : float, optional
+    Width of the linear aquifer, ft. Required only for linear flow.
+length : float, optional
+    Length of the linear aquifer, ft. Required only for linear flow.</p>
+<h4 id="pytank.aquifer_model.Fetkovich--returns">Returns</h4>
+<p>pandas.DataFrame
+    Containing the cumulative water influx, bbl.</p>
+
+              <details class="quote">
+                <summary>Source code in <code>pytank\aquifer_model.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Fetkovich</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    To estimate water influx using the Fetkovich&#39;s method we need to estimate:</span>
+<span class="sd">    Wi, Wei and J.</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    aq_radius : float</span>
+<span class="sd">        Radius of the aquifer, ft.</span>
+<span class="sd">    res_radius : float</span>
+<span class="sd">        Radius of the reservoir, ft.</span>
+<span class="sd">    aq_thickness : float</span>
+<span class="sd">        Thickness of the aquifer, ft.</span>
+<span class="sd">    aq_por : float</span>
+<span class="sd">        Porosity of the aquifer.</span>
+<span class="sd">    ct : float</span>
+<span class="sd">        Total compressibility coefficient, psi^-1.</span>
+<span class="sd">    theta : float</span>
+<span class="sd">        Encroachment angle.</span>
+<span class="sd">    k : float</span>
+<span class="sd">        Permeability of the aquifer, md.</span>
+<span class="sd">    water_visc : float</span>
+<span class="sd">        Viscosity of water, cp.</span>
+<span class="sd">    boundary_type : str, optional</span>
+<span class="sd">        Type of aquifer boundary, default is &#39;no_flow&#39;. Options are &#39;no_flow&#39;,</span>
+<span class="sd">        &#39;constant_pressure&#39;, &#39;infinite&#39;.</span>
+<span class="sd">    flow_type : str, optional</span>
+<span class="sd">        Type of flow, default is &#39;radial&#39;. Options are &#39;radial&#39;, &#39;linear&#39;.</span>
+<span class="sd">    pr : list or numpy array, optional</span>
+<span class="sd">        Measured reservoir pressure, psi.</span>
+<span class="sd">    time_step : list or numpy array, optional</span>
+<span class="sd">        Time step, days.</span>
+<span class="sd">    width : float, optional</span>
+<span class="sd">        Width of the linear aquifer, ft. Required only for linear flow.</span>
+<span class="sd">    length : float, optional</span>
+<span class="sd">        Length of the linear aquifer, ft. Required only for linear flow.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pandas.DataFrame</span>
+<span class="sd">        Containing the cumulative water influx, bbl.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">aq_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">res_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">aq_thickness</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">aq_por</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">ct</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">theta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">k</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">water_visc</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+            <span class="n">boundary_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;no_flow&quot;</span><span class="p">,</span>
+            <span class="n">flow_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;radial&quot;</span><span class="p">,</span>
+            <span class="n">pr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">time_step</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initializes the attributes of the Fetkovich&#39;s class.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    aq_radius : float</span>
+<span class="sd">        Radius of the aquifer, ft.</span>
+<span class="sd">    res_radius : float</span>
+<span class="sd">        Radius of the reservoir, ft.</span>
+<span class="sd">    aq_thickness : float</span>
+<span class="sd">        Thickness of the aquifer, ft.</span>
+<span class="sd">    aq_por : float</span>
+<span class="sd">        Porosity of the aquifer.</span>
+<span class="sd">    ct : float</span>
+<span class="sd">        Total compressibility coefficient, psi^-1.</span>
+<span class="sd">    theta : float</span>
+<span class="sd">        Encroachment angle.</span>
+<span class="sd">    k : float</span>
+<span class="sd">        Permeability of the aquifer, md.</span>
+<span class="sd">    water_visc : float</span>
+<span class="sd">        Viscosity of water, cp.</span>
+<span class="sd">    boundary_type : str, optional</span>
+<span class="sd">        Type of aquifer boundary, default is &#39;no_flow&#39;. Options are &#39;no_flow&#39;,</span>
+<span class="sd">         &#39;constant_pressure&#39;, &#39;infinite&#39;.</span>
+<span class="sd">    flow_type : str, optional</span>
+<span class="sd">        Type of flow, default is &#39;radial&#39;. Options are &#39;radial&#39;, &#39;linear&#39;.</span>
+<span class="sd">    pr : list or numpy array, optional</span>
+<span class="sd">        Measured reservoir pressure, psi.</span>
+<span class="sd">    time_step : list or numpy array, optional</span>
+<span class="sd">        Time step, days.</span>
+<span class="sd">    width : float, optional</span>
+<span class="sd">        Width of the linear aquifer, ft. Required only for linear flow.</span>
+<span class="sd">    length : float, optional</span>
+<span class="sd">        Length of the linear aquifer, ft. Required only for linear flow.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aq_radius</span> <span class="o">=</span> <span class="n">aq_radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">=</span> <span class="n">res_radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">=</span> <span class="n">aq_thickness</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span> <span class="o">=</span> <span class="n">aq_por</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">=</span> <span class="n">ct</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">=</span> <span class="n">water_visc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">=</span> <span class="n">boundary_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">=</span> <span class="n">flow_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_step</span> <span class="o">=</span> <span class="n">time_step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+
+    <span class="k">def</span> <span class="nf">_set_pr_and_time_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pr</span><span class="p">,</span> <span class="n">time_step</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Private method to assign value o the pr and time_step properties of</span>
+<span class="sd">        the aquifer Fetkovich</span>
+<span class="sd">        :param</span>
+<span class="sd">        pr: List of Measured reservoir pressure, psi.</span>
+<span class="sd">        time_step: List of Time lapses, days.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_step</span> <span class="o">=</span> <span class="n">time_step</span>
+
+        <span class="c1"># Check if the time list is in datetime format</span>
+        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">):</span>
+            <span class="c1"># If all elements are already datetime objects, convert -</span>
+            <span class="c1"># to cumulative days</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time_step</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">time_step</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">days</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">):</span>
+            <span class="c1"># If elements are Timestamp objects, convert to datetime and -</span>
+            <span class="c1"># then to cumulative days</span>
+            <span class="n">datetime_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time_step</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">datetime_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">days</span>
+                               <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">datetime_list</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span><span class="p">):</span>
+            <span class="c1"># If all elements are strings, convert to datetime and then -</span>
+            <span class="c1"># to cumulative days</span>
+            <span class="n">datetime_list</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">time_step</span>
+            <span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time_step</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">datetime_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">days</span>
+                              <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">datetime_list</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Convert dates to cumulative days using variable_types</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time_step</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="n">time_step</span><span class="p">)</span>
+
+        <span class="c1"># Automatically influx of water data upon object creation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">we</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">we</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method to calculate cumulative influx of water and gets the values -</span>
+<span class="sd">        in a DataFrame.</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        pd.Dataframe: DataFrame wit the delta WE, Cumulative WE and time</span>
+<span class="sd">         lapses columns.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span> <span class="s2">&quot;linear&quot;</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="ow">is</span> <span class="kc">None</span>
+                                           <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;When using linear flow, &quot;</span>
+                             <span class="s2">&quot;width and length are required arguments&quot;</span><span class="p">)</span>
+        <span class="c1"># Check if pressure and time step are arrays, list or floats</span>
+        <span class="n">pr_array</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">)</span>
+        <span class="n">delta_t</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_step</span><span class="p">)</span>
+
+        <span class="c1"># if not all(pr_array[i] &gt;= pr_array[i + 1]</span>
+        <span class="c1">#           for i in range(len(pr_array) - 1)):</span>
+        <span class="c1">#    raise ValueError(&quot;Pressure array must be in descendant order&quot;)</span>
+
+        <span class="c1"># Check if pressure array is not in descendant order throw an error</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">pr_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pressure must be greater than zero&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pr_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span>
+                <span class="n">delta_t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">dim_pr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">pr_array</span><span class="p">)</span>
+            <span class="n">dim_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">delta_t</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">dim_pr</span> <span class="o">!=</span> <span class="n">dim_time</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Dimensions of pressure array and time array &quot;</span>
+                                 <span class="s2">&quot;should be equal,&quot;</span>
+                                 <span class="s2">&quot;please verify your input&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the initial volume of water in the aquifers (Wi)</span>
+        <span class="n">wi</span> <span class="o">=</span> <span class="p">((</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">5.615</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aq_radius</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+              <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the maximum possible water influx (Wei)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta</span> <span class="o">/</span> <span class="mi">360</span>
+        <span class="n">wei</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">*</span> <span class="n">wi</span> <span class="o">*</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">f</span>
+
+        <span class="c1"># Calculate the aquifers productivity index</span>
+        <span class="c1"># based on the boundary_type conditions and aquifers geometry (J)</span>
+        <span class="n">rd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_radius</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span>
+
+        <span class="n">j</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;no_flow&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span> <span class="s2">&quot;radial&quot;</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.00708</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span>
+                 <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rd</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.75</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;constant_pressure&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span>
+              <span class="s2">&quot;radial&quot;</span><span class="p">):</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.00708</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span> <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span>
+                                                              <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rd</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;no_flow&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.003381</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;constant_pressure&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span>
+              <span class="s2">&quot;linear&quot;</span><span class="p">):</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.001127</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;infinite&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span> <span class="s2">&quot;radial&quot;</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                <span class="p">(</span><span class="mf">0.0142</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="mi">365</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ct</span><span class="p">))</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.00708</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span>
+                 <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span><span class="p">))</span>
+
+        <span class="c1"># Calculate the incremental water influx (We)n during the nth -</span>
+        <span class="c1"># time interval</span>
+
+        <span class="c1"># Calculate cumulative water influx</span>
+        <span class="n">cum_water_influx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">pr</span> <span class="o">=</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Average aquifers pressure after removing We bbl of water from -</span>
+        <span class="c1"># the aquifers</span>
+        <span class="n">pa</span> <span class="o">=</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">time_steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pr_array</span><span class="p">)):</span>
+            <span class="n">pr_avg</span> <span class="o">=</span> <span class="p">(</span><span class="n">pr</span> <span class="o">+</span> <span class="n">pr_array</span><span class="p">[</span><span class="n">ip</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                <span class="n">diff_pr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">delta_t</span><span class="p">)</span>
+                <span class="n">time_steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time_steps</span><span class="p">,</span> <span class="n">diff_pr</span><span class="p">)</span>
+                <span class="n">we</span> <span class="o">=</span> <span class="p">((</span><span class="n">wei</span> <span class="o">/</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                    <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">j</span> <span class="o">*</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">time_steps</span><span class="p">[</span><span class="n">ip</span><span class="p">])</span> <span class="o">/</span> <span class="n">wei</span><span class="p">))</span> <span class="o">*</span>
+                      <span class="p">(</span><span class="n">pa</span> <span class="o">-</span> <span class="n">pr_avg</span><span class="p">))</span>
+                <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">delta_t</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">we</span> <span class="o">=</span> <span class="p">((</span><span class="n">wei</span> <span class="o">/</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                    <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">j</span> <span class="o">*</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">delta_t</span><span class="p">)</span> <span class="o">/</span> <span class="n">wei</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">pa</span> <span class="o">-</span> <span class="n">pr_avg</span><span class="p">))</span>
+                <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elapsed_time</span><span class="p">,</span> <span class="n">delta_t</span> <span class="o">*</span> <span class="n">ip</span><span class="p">)</span>
+            <span class="n">pr</span> <span class="o">=</span> <span class="n">pr_array</span><span class="p">[</span><span class="n">ip</span><span class="p">]</span>
+            <span class="n">cum_water_influx</span> <span class="o">=</span> <span class="n">cum_water_influx</span> <span class="o">+</span> <span class="n">we</span>
+            <span class="n">pa</span> <span class="o">=</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">cum_water_influx</span> <span class="o">/</span> <span class="n">wei</span><span class="p">))</span>
+
+            <span class="c1"># Creation values for each key of the list df_list that will -</span>
+            <span class="c1"># have a dictionary</span>
+            <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;Delta We&quot;</span><span class="p">:</span> <span class="n">we</span><span class="p">,</span>
+                <span class="s2">&quot;Cumulative We&quot;</span><span class="p">:</span> <span class="n">cum_water_influx</span><span class="p">,</span>
+                <span class="s2">&quot;Elapsed time&quot;</span><span class="p">:</span> <span class="n">elapsed_time</span><span class="p">[</span><span class="n">ip</span><span class="p">],</span>
+            <span class="p">})</span>
+
+        <span class="c1"># Creation of the dataframe that will be return for users</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_list</span><span class="p">)</span>
+        <span class="c1"># df = df.set_index(&quot;Elapsed time&quot;)</span>
+        <span class="k">return</span> <span class="n">df</span>
+
+    <span class="k">def</span> <span class="nf">get_we</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Method than encapsulated a DataFrame to gets an only column</span>
+<span class="sd">        of Cumulative We.</span>
+<span class="sd">        :return:</span>
+<span class="sd">        pd.Series: A column of values of Cumulative We.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Encapsulation of DataFrame using method We.</span>
+        <span class="n">we</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">we</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">we</span><span class="p">[</span><span class="s2">&quot;Cumulative We&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pytank.aquifer_model.Fetkovich.__init__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">aq_radius</span><span class="p">,</span> <span class="n">res_radius</span><span class="p">,</span> <span class="n">aq_thickness</span><span class="p">,</span> <span class="n">aq_por</span><span class="p">,</span> <span class="n">ct</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">water_visc</span><span class="p">,</span> <span class="n">boundary_type</span><span class="o">=</span><span class="s1">&#39;no_flow&#39;</span><span class="p">,</span> <span class="n">flow_type</span><span class="o">=</span><span class="s1">&#39;radial&#39;</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">time_step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <pre><code>Initializes the attributes of the Fetkovich's class.
+</code></pre>
+<h5 id="pytank.aquifer_model.Fetkovich.__init__--parameters">Parameters</h5>
+<p>aq_radius : float
+    Radius of the aquifer, ft.
+res_radius : float
+    Radius of the reservoir, ft.
+aq_thickness : float
+    Thickness of the aquifer, ft.
+aq_por : float
+    Porosity of the aquifer.
+ct : float
+    Total compressibility coefficient, psi^-1.
+theta : float
+    Encroachment angle.
+k : float
+    Permeability of the aquifer, md.
+water_visc : float
+    Viscosity of water, cp.
+boundary_type : str, optional
+    Type of aquifer boundary, default is 'no_flow'. Options are 'no_flow',
+     'constant_pressure', 'infinite'.
+flow_type : str, optional
+    Type of flow, default is 'radial'. Options are 'radial', 'linear'.
+pr : list or numpy array, optional
+    Measured reservoir pressure, psi.
+time_step : list or numpy array, optional
+    Time step, days.
+width : float, optional
+    Width of the linear aquifer, ft. Required only for linear flow.
+length : float, optional
+    Length of the linear aquifer, ft. Required only for linear flow.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>pytank\aquifer_model.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">aq_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">res_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">aq_thickness</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">aq_por</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">ct</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">theta</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">k</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">water_visc</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">boundary_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;no_flow&quot;</span><span class="p">,</span>
+        <span class="n">flow_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;radial&quot;</span><span class="p">,</span>
+        <span class="n">pr</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">time_step</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">width</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Initializes the attributes of the Fetkovich&#39;s class.</span>
+
+<span class="sd">Parameters</span>
+<span class="sd">----------</span>
+<span class="sd">aq_radius : float</span>
+<span class="sd">    Radius of the aquifer, ft.</span>
+<span class="sd">res_radius : float</span>
+<span class="sd">    Radius of the reservoir, ft.</span>
+<span class="sd">aq_thickness : float</span>
+<span class="sd">    Thickness of the aquifer, ft.</span>
+<span class="sd">aq_por : float</span>
+<span class="sd">    Porosity of the aquifer.</span>
+<span class="sd">ct : float</span>
+<span class="sd">    Total compressibility coefficient, psi^-1.</span>
+<span class="sd">theta : float</span>
+<span class="sd">    Encroachment angle.</span>
+<span class="sd">k : float</span>
+<span class="sd">    Permeability of the aquifer, md.</span>
+<span class="sd">water_visc : float</span>
+<span class="sd">    Viscosity of water, cp.</span>
+<span class="sd">boundary_type : str, optional</span>
+<span class="sd">    Type of aquifer boundary, default is &#39;no_flow&#39;. Options are &#39;no_flow&#39;,</span>
+<span class="sd">     &#39;constant_pressure&#39;, &#39;infinite&#39;.</span>
+<span class="sd">flow_type : str, optional</span>
+<span class="sd">    Type of flow, default is &#39;radial&#39;. Options are &#39;radial&#39;, &#39;linear&#39;.</span>
+<span class="sd">pr : list or numpy array, optional</span>
+<span class="sd">    Measured reservoir pressure, psi.</span>
+<span class="sd">time_step : list or numpy array, optional</span>
+<span class="sd">    Time step, days.</span>
+<span class="sd">width : float, optional</span>
+<span class="sd">    Width of the linear aquifer, ft. Required only for linear flow.</span>
+<span class="sd">length : float, optional</span>
+<span class="sd">    Length of the linear aquifer, ft. Required only for linear flow.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">aq_radius</span> <span class="o">=</span> <span class="n">aq_radius</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">=</span> <span class="n">res_radius</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">=</span> <span class="n">aq_thickness</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span> <span class="o">=</span> <span class="n">aq_por</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">=</span> <span class="n">ct</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">theta</span> <span class="o">=</span> <span class="n">theta</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">=</span> <span class="n">k</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">=</span> <span class="n">water_visc</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">=</span> <span class="n">boundary_type</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">=</span> <span class="n">flow_type</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pr</span> <span class="o">=</span> <span class="n">pr</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">time_step</span> <span class="o">=</span> <span class="n">time_step</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pytank.aquifer_model.Fetkovich.get_we" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_we</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Method than encapsulated a DataFrame to gets an only column
+of Cumulative We.
+:return:
+pd.Series: A column of values of Cumulative We.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>pytank\aquifer_model.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_we</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Method than encapsulated a DataFrame to gets an only column</span>
+<span class="sd">    of Cumulative We.</span>
+<span class="sd">    :return:</span>
+<span class="sd">    pd.Series: A column of values of Cumulative We.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Encapsulation of DataFrame using method We.</span>
+    <span class="n">we</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">we</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">we</span><span class="p">[</span><span class="s2">&quot;Cumulative We&quot;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="pytank.aquifer_model.Fetkovich.we" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">we</span><span class="p">()</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+      <p>Method to calculate cumulative influx of water and gets the values -
+in a DataFrame.</p>
+<p>:return:
+pd.Dataframe: DataFrame wit the delta WE, Cumulative WE and time
+ lapses columns.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>pytank\aquifer_model.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">we</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Method to calculate cumulative influx of water and gets the values -</span>
+<span class="sd">    in a DataFrame.</span>
+
+<span class="sd">    :return:</span>
+<span class="sd">    pd.Dataframe: DataFrame wit the delta WE, Cumulative WE and time</span>
+<span class="sd">     lapses columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span> <span class="s2">&quot;linear&quot;</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="ow">is</span> <span class="kc">None</span>
+                                       <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;When using linear flow, &quot;</span>
+                         <span class="s2">&quot;width and length are required arguments&quot;</span><span class="p">)</span>
+    <span class="c1"># Check if pressure and time step are arrays, list or floats</span>
+    <span class="n">pr_array</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">)</span>
+    <span class="n">delta_t</span> <span class="o">=</span> <span class="n">variable_type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time_step</span><span class="p">)</span>
+
+    <span class="c1"># if not all(pr_array[i] &gt;= pr_array[i + 1]</span>
+    <span class="c1">#           for i in range(len(pr_array) - 1)):</span>
+    <span class="c1">#    raise ValueError(&quot;Pressure array must be in descendant order&quot;)</span>
+
+    <span class="c1"># Check if pressure array is not in descendant order throw an error</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">pr_array</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Pressure must be greater than zero&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pr_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">delta_t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">dim_pr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">pr_array</span><span class="p">)</span>
+        <span class="n">dim_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">delta_t</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dim_pr</span> <span class="o">!=</span> <span class="n">dim_time</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Dimensions of pressure array and time array &quot;</span>
+                             <span class="s2">&quot;should be equal,&quot;</span>
+                             <span class="s2">&quot;please verify your input&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Calculate the initial volume of water in the aquifers (Wi)</span>
+    <span class="n">wi</span> <span class="o">=</span> <span class="p">((</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">5.615</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">aq_radius</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+          <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_por</span><span class="p">)</span>
+
+    <span class="c1"># Calculate the maximum possible water influx (Wei)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">theta</span> <span class="o">/</span> <span class="mi">360</span>
+    <span class="n">wei</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ct</span> <span class="o">*</span> <span class="n">wi</span> <span class="o">*</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">f</span>
+
+    <span class="c1"># Calculate the aquifers productivity index</span>
+    <span class="c1"># based on the boundary_type conditions and aquifers geometry (J)</span>
+    <span class="n">rd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_radius</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span>
+
+    <span class="n">j</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;no_flow&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span> <span class="s2">&quot;radial&quot;</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.00708</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span>
+             <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rd</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.75</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;constant_pressure&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span>
+          <span class="s2">&quot;radial&quot;</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.00708</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span> <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span>
+                                                          <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rd</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;no_flow&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span> <span class="s2">&quot;linear&quot;</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.003381</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;constant_pressure&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span>
+          <span class="s2">&quot;linear&quot;</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.001127</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary_type</span> <span class="o">==</span> <span class="s2">&quot;infinite&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_type</span> <span class="o">==</span> <span class="s2">&quot;radial&quot;</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+            <span class="p">(</span><span class="mf">0.0142</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="mi">365</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">f</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ct</span><span class="p">))</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.00708</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">aq_thickness</span> <span class="o">*</span>
+             <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">water_visc</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">res_radius</span><span class="p">))</span>
+
+    <span class="c1"># Calculate the incremental water influx (We)n during the nth -</span>
+    <span class="c1"># time interval</span>
+
+    <span class="c1"># Calculate cumulative water influx</span>
+    <span class="n">cum_water_influx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">pr</span> <span class="o">=</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Average aquifers pressure after removing We bbl of water from -</span>
+    <span class="c1"># the aquifers</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">time_steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pr_array</span><span class="p">)):</span>
+        <span class="n">pr_avg</span> <span class="o">=</span> <span class="p">(</span><span class="n">pr</span> <span class="o">+</span> <span class="n">pr_array</span><span class="p">[</span><span class="n">ip</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta_t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">diff_pr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">delta_t</span><span class="p">)</span>
+            <span class="n">time_steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time_steps</span><span class="p">,</span> <span class="n">diff_pr</span><span class="p">)</span>
+            <span class="n">we</span> <span class="o">=</span> <span class="p">((</span><span class="n">wei</span> <span class="o">/</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">j</span> <span class="o">*</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">time_steps</span><span class="p">[</span><span class="n">ip</span><span class="p">])</span> <span class="o">/</span> <span class="n">wei</span><span class="p">))</span> <span class="o">*</span>
+                  <span class="p">(</span><span class="n">pa</span> <span class="o">-</span> <span class="n">pr_avg</span><span class="p">))</span>
+            <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">delta_t</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">we</span> <span class="o">=</span> <span class="p">((</span><span class="n">wei</span> <span class="o">/</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
+                <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">j</span> <span class="o">*</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">delta_t</span><span class="p">)</span> <span class="o">/</span> <span class="n">wei</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">pa</span> <span class="o">-</span> <span class="n">pr_avg</span><span class="p">))</span>
+            <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elapsed_time</span><span class="p">,</span> <span class="n">delta_t</span> <span class="o">*</span> <span class="n">ip</span><span class="p">)</span>
+        <span class="n">pr</span> <span class="o">=</span> <span class="n">pr_array</span><span class="p">[</span><span class="n">ip</span><span class="p">]</span>
+        <span class="n">cum_water_influx</span> <span class="o">=</span> <span class="n">cum_water_influx</span> <span class="o">+</span> <span class="n">we</span>
+        <span class="n">pa</span> <span class="o">=</span> <span class="n">pr_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">cum_water_influx</span> <span class="o">/</span> <span class="n">wei</span><span class="p">))</span>
+
+        <span class="c1"># Creation values for each key of the list df_list that will -</span>
+        <span class="c1"># have a dictionary</span>
+        <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s2">&quot;Delta We&quot;</span><span class="p">:</span> <span class="n">we</span><span class="p">,</span>
+            <span class="s2">&quot;Cumulative We&quot;</span><span class="p">:</span> <span class="n">cum_water_influx</span><span class="p">,</span>
+            <span class="s2">&quot;Elapsed time&quot;</span><span class="p">:</span> <span class="n">elapsed_time</span><span class="p">[</span><span class="n">ip</span><span class="p">],</span>
+        <span class="p">})</span>
+
+    <span class="c1"># Creation of the dataframe that will be return for users</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_list</span><span class="p">)</span>
+    <span class="c1"># df = df.set_index(&quot;Elapsed time&quot;)</span>
+    <span class="k">return</span> <span class="n">df</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+  </body>
+</html>

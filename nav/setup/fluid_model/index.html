@@ -1,0 +1,1491 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../well/">
+      
+      
+        <link rel="next" href="../tank/">
+      
+      
+      <link rel="icon" href="../../../../static/Icon 2.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Which fluid models do I need? - PyTank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pvt-properties" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.md" title="PyTank" class="md-header__button md-logo" aria-label="PyTank" data-md-component="logo">
+      
+  <img src="../../../../static/Icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyTank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Which fluid models do I need?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.md" title="PyTank" class="md-nav__button md-logo" aria-label="PyTank" data-md-component="logo">
+      
+  <img src="../../../../static/Icon.png" alt="logo">
+
+    </a>
+    PyTank
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pytank Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_starter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A quick start To Pytank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advance_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advance features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Create your items
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Create your items
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../well/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to create a Well?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Which fluid models do I need?
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Which fluid models do I need?
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-pvt-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining PVT Properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Obtaining PVT Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pvt-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. PVT Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-empirical-correlations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Empirical Correlations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Interpolation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-fluids-for-water-and-oil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Fluids for Water and Oil
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Fluids for Water and Oil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oil-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Oil Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Water Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytank-fluid-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pytank Fluid Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pytank Fluid Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oilmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      OilModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watermodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      WaterModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example of Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-model-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Model Creation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-property-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Property interpolation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to create a Tank?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analyzing with Pytank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aquifer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Let´s create an Aquifer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/develop_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Develop guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/api_reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Main Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Main Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/well_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Well
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/fluid_model_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/oil_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oil Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/water_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/tank_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/aquifer_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aquifer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/analysis_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Secondary Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Secondary Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/helpers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helpers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/vector_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/pvt_correlations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PVT Correlations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-pvt-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtaining PVT Properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Obtaining PVT Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pvt-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. PVT Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-empirical-correlations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Empirical Correlations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Interpolation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-fluids-for-water-and-oil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Fluids for Water and Oil
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Fluids for Water and Oil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oil-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Oil Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Water Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytank-fluid-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pytank Fluid Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pytank Fluid Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oilmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      OilModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watermodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      WaterModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example of Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-model-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Model Creation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-property-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Property interpolation:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="pvt-properties"><strong>PVT Properties</strong></h1>
+<p>PVT (Pressure, Volume and Temperature) properties are fundamental in reservoir
+engineering, as they determine the behavior of fluids in a reservoir. These
+properties are obtained through various techniques, including laboratory
+analysis, empirical correlations and interpolation. The following is a
+description of how these properties and model fluids are obtained for water and
+oil.</p>
+<h2 id="obtaining-pvt-properties"><strong>Obtaining PVT Properties</strong></h2>
+<h3 id="1-pvt-analysis">1. PVT Analysis</h3>
+<p>PVT analysis is a set of experimental tests that simulate the behavior of fluids
+in the reservoir under different pressure and temperature conditions. This
+analysis includes:</p>
+<ul>
+<li><code>Separation tests</code>: determine how the fluids behave when separating under
+  laboratory conditions, replicating the situation in the reservoir.</li>
+<li><code>Differential release tests</code>: Measure how the gas is released from the fluid
+  as the pressure decreases.</li>
+<li><code>Composition tests</code>: Analyze the composition of fluids to understand their
+  physical and chemical properties.</li>
+</ul>
+<h3 id="2-empirical-correlations">2. Empirical Correlations</h3>
+<p>Various empirical correlations have been developed over the years to estimate
+PVT properties based on field data. These correlations can be simple or
+complex and are used to estimate properties such as:</p>
+<ul>
+<li><strong>Bubble pressure</strong></li>
+<li><strong>Gas-Oil Ratio (GOR)</strong></li>
+<li><strong>Volumetric factors (Bo and Bg)</strong></li>
+<li><strong>Viscosity and compressibility</strong></li>
+<li><strong>Viscosity and compressibility</strong></li>
+</ul>
+<p>It is important to note that the use of correlations should be done with
+caution, as they may not be applicable to all reservoir conditions and may
+introduce errors if fluid characteristics are not properly considered.</p>
+<h3 id="3-interpolation">3. Interpolation</h3>
+<p>Interpolation is used to estimate PVT property values at pressures that were
+not directly measured in the laboratory. This is done by means of
+interpolation functions that allow intermediate values to be calculated based
+on the data obtained from PVT tests. For example, the volumetric oil factor (
+Bo) or gas solubility (Rs) at a specific pressure can be interpolated using
+pressure data and the corresponding properties.</p>
+<h2 id="model-fluids-for-water-and-oil"><strong>Model Fluids for Water and Oil</strong></h2>
+<h3 id="oil-model">Oil Model</h3>
+<p>The oil model is based on PVT properties obtained through laboratory analysis.
+Key parameters include:</p>
+<ul>
+<li><code>Bo (Oil Volumetric Factor)</code>: relates the volume of oil in the reservoir to
+  the volume at surface conditions.</li>
+<li><code>Bg (Gas Volumetric Factor)</code>: Relates the volume of gas in the reservoir to
+  the volume at surface conditions.</li>
+<li><code>GOR (Gas-Oil Ratio)</code>: Ratio of dissolved gas to oil. These parameters are
+  essential for the design of production systems and for reserves estimation.</li>
+</ul>
+<h3 id="water-model">Water Model</h3>
+<p>The water model focuses on properties such as:</p>
+<ul>
+<li><code>Bw (Volumetric Water Factor)</code>: relates the volume of water in the reservoir
+  to the volume at surface conditions.</li>
+<li><code>Salinity</code>: Affects the density and viscosity of water, which in turn
+  influences the behavior of the fluid in the reservoir.</li>
+</ul>
+<p>Water properties are often calculated using correlations based on salinity,
+temperature and pressure.</p>
+<h2 id="pytank-fluid-models"><strong>Pytank Fluid Models</strong></h2>
+<p>Pytank has two Classes: <em>OilModel</em>, <em>WaterModel</em>, which will allow you to
+develop a
+model so that you can perform the respective analysis of your data.</p>
+<h3 id="oilmodel"><strong>OilModel</strong></h3>
+<p>The OilModel class focuses on the PVT properties of oil, through interpolations
+made with the interpolated (linear interpolation) module of the Python scipy
+library from a given pressure. It uses a DataFrame containing validated PVT
+data, which may include properties such as:</p>
+<ul>
+<li><code>Bo (Volumetric Oil Factor)</code>: This factor is crucial for converting oil
+  volumes at reservoir conditions to surface conditions. The OilModel class
+  allows users to interpolate the Bo value at different pressures using the
+  get_bo_at_press() method. This is critical for production planning and reserve
+  estimation.</li>
+<li><code>Bg (Volumetric Gas Factor) and GOR (Gas-Oil Ratio)</code>: The class also allows
+  interpolation of these properties, which helps users understand how the gas
+  dissolved in the oil will behave under different pressure conditions.</li>
+</ul>
+<p>Using the OilModel class allows users to easily access PVT properties of the
+oil, perform calculations needed for production planning and optimize
+hydrocarbon recovery. For example, an engineer could create an instance of
+OilModel with PVT data obtained from laboratory tests and then use interpolation
+methods to estimate properties at specific pressures, facilitating informed
+decision-making.</p>
+<p>For more information on the OilModel class you can review its
+<a href="../../API/generated/oil_model/">documentation</a>.</p>
+<h3 id="watermodel"><strong>WaterModel</strong></h3>
+<p>The WaterModel class focuses on obtaining the PVT properties of water by using
+<a href="../../API/generated/pvt_correlations/">PVT correlations</a>. The key properties it
+handles include:</p>
+<ul>
+<li><code>Bw (Volumetric Water Factor)</code>: this factor is essential to understand how
+  water behaves in the reservoir and how it affects oil production. The
+  WaterModel class allows calculating Bw at different pressures through the
+  get_bw_at_press() method, using correlations based on salinity and
+  temperature.</li>
+<li><code>Salinity</code>: The salinity of water influences its density and viscosity,
+  which in turn affects the behavior of the fluid in the reservoir. The class
+  allows users to specify salinity and obtain related properties, which is
+  crucial for water production modeling.</li>
+</ul>
+<p>The WaterModel class provides users with a tool to calculate and analyze water
+properties in the reservoir, allowing a better understanding of how water
+interacts with oil and how it can be managed in the production process.</p>
+<p>For more information on the WaterModel class you can review its
+<a href="../../API/generated/water_model/">documentation</a>.</p>
+<h3 id="example-of-use"><strong>Example of Use</strong></h3>
+<p>A user working in reservoir engineering can use the OilModel and WaterModel
+classes as follows:</p>
+<h4 id="1-model-creation">1. Model Creation:</h4>
+<ul>
+<li>PVT data is collected through laboratory testing and organized in a
+  DataFrame (df_pvt).</li>
+<li>An instance of OilModel is created by passing the PVT DataFrame and the
+  reservoir temperature.</li>
+<li>A WaterModel instance is created by specifying salinity, temperature and unit
+  of measure.</li>
+</ul>
+<pre><code>oil_model = OilModel(data_pvt=df_pvt, temperature=25)
+water_model = WaterModel(salinity=3000, temperature=200, unit=1)
+</code></pre>
+<h4 id="2-property-interpolation">2. Property interpolation:</h4>
+<ul>
+<li>The engineer can use OilModel's interpolation methods to obtain the volumetric
+  oil factor (Bo) at different pressures, allowing him to adjust his production
+  calculations according to reservoir conditions.</li>
+</ul>
+<pre><code>bo_value = oil_model.get_bo_at_press(3000)  # Bo interpolation at 3000 psi
+</code></pre>
+<ul>
+<li>Similarly, you can use WaterModel to calculate the volumetric water factor (
+  Bw) at the same pressure, ensuring that all aspects of production are properly
+  considered.</li>
+</ul>
+<pre><code>bw_value = water_model.get_bw_at_press(3000)  # Calculation of Bw at 3000 psi
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+  </body>
+</html>

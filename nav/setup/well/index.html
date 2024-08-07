@@ -1,0 +1,1604 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../advance_features/">
+      
+      
+        <link rel="next" href="../fluid_model/">
+      
+      
+      <link rel="icon" href="../../../../static/Icon 2.ico">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>How to create a Well? - PyTank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-a-well" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.md" title="PyTank" class="md-header__button md-logo" aria-label="PyTank" data-md-component="logo">
+      
+  <img src="../../../../static/Icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyTank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to create a Well?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.md" title="PyTank" class="md-nav__button md-logo" aria-label="PyTank" data-md-component="logo">
+      
+  <img src="../../../../static/Icon.png" alt="logo">
+
+    </a>
+    PyTank
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pytank Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_starter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A quick start To Pytank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advance_features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advance features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Create your items
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Create your items
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How to create a Well?
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    How to create a Well?
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploration-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration Wells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-or-production-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development or Production Wells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#injection-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Injection wells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-well-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Well class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Well class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classification-of-the-well-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification of the Well class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-the-well-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of the Well class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-create-a-well-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to create a well instance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to create a well instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-import-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Import Libraries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-sample-dataframe-for-production-and-pressure-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create a sample DataFrame for production and pressure data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-prodvector-and-pressvector-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Create ProdVector and PressVector instances
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-create-an-instance-of-the-well-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Create an instance of the Well class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-multiple-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿How to create multiple wells?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿How to create multiple wells?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-wells-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Wells Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-your-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search for your wells
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-list-of-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create your list of wells
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluid_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Which fluid models do I need?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tank/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to create a Tank?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analyzing with Pytank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aquifer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Let´s create an Aquifer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/develop_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Develop guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/api_reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Main Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Main Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/well_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Well
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/fluid_model_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/oil_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Oil Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/water_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/tank_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tank
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/aquifer_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aquifer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/analysis_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Secondary Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Secondary Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/helpers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helpers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/vector_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Others
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/generated/pvt_correlations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PVT Correlations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploration-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration Wells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-or-production-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development or Production Wells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#injection-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Injection wells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-well-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Well class
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Well class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classification-of-the-well-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification of the Well class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-the-well-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of the Well class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-create-a-well-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to create a well instance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to create a well instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-import-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Import Libraries
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-sample-dataframe-for-production-and-pressure-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create a sample DataFrame for production and pressure data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-prodvector-and-pressvector-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Create ProdVector and PressVector instances
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-create-an-instance-of-the-well-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Create an instance of the Well class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-multiple-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿How to create multiple wells?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿How to create multiple wells?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-wells-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Wells Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-your-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Search for your wells
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-your-list-of-wells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create your list of wells
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="what-is-a-well"><strong>¿What is a Well?</strong></h1>
+<p>A well, from a reservoir engineering perspective, is defined as a cylindrical
+borehole drilled into the subsurface for the purpose of exploring, evaluating or
+exploiting a hydrocarbon reservoir. There are different types of wells:</p>
+<h2 id="exploration-wells"><strong>Exploration Wells</strong></h2>
+<p>They are drilled to determine if a hydrocarbon reservoir exists in a specific
+location. They provide geological and reservoir information that is used to
+evaluate the feasibility of developing the field.</p>
+<h2 id="development-or-production-wells"><strong>Development or Production Wells</strong></h2>
+<p>They are drilled in an existing field to exploit the reservoir and produce
+hydrocarbons. This category includes vertical, horizontal and multilateral
+wells.</p>
+<h2 id="injection-wells"><strong>Injection wells</strong></h2>
+<p>They are used to inject fluids (water, gas or chemicals) into the reservoir to
+maintain pressure and improve hydrocarbon recovery.</p>
+<h2 id="the-well-class"><strong>The Well class</strong></h2>
+<p>The Well class is defined as a model class using the Pydantic library. Pydantic
+is a data validation library that provides an elegant way to define and validate
+data structures.</p>
+<h3 id="classification-of-the-well-class"><strong>Classification of the Well class</strong></h3>
+<p>The Well class is classified as a data model class that is used to group
+production and pressure information by well. It provides an organized structure
+for storing and managing data related to hydrocarbon production wells.</p>
+<h3 id="explanation-of-the-well-class"><strong>Explanation of the Well class</strong></h3>
+<p><strong>The Well class comprises the following attributes:</strong></p>
+<ul>
+<li><code>name</code>: a field of type str representing the name of the well.</li>
+<li><code>prod_data</code>: an optional field of type ProdVector that stores the production
+  data of the well.</li>
+<li><code>press_data</code>: an optional field of type PressVector that stores the well's
+  pressure data.</li>
+</ul>
+<p>The <em>Well</em> class is used to group and manage information related to a specific
+well. It allows storing and accessing production and pressure data associated
+with each well in an organized and structured manner.</p>
+<p>By using the <em>Well</em> class, individual <em>well</em> instances can be created, each with
+its own name and associated production and pressure data. This facilitates the
+management and analysis of <em>well</em> information in the context of reservoir
+engineering.</p>
+<h2 id="steps-to-create-a-well-instance"><strong>Steps to create a well instance</strong></h2>
+<h3 id="1-import-libraries">1. <em>Import Libraries</em></h3>
+<pre><code>import pandas as pd # Import the pandas library for data manipulation
+from pytank.vector_data import 
+     ProdVector, PressVector # Import ProdVector and PressVector classes
+from pytank.well import Well # Import the Well class
+</code></pre>
+<h3 id="2-create-a-sample-dataframe-for-production-and-pressure-data">2. <em>Create a sample DataFrame for production and pressure data</em></h3>
+<pre><code>prod_df = pd.DataFrame({  # Initialize a DataFrame with production data
+    'START_DATETIME': ['2022-01-01', '2022-02-01', '2022-03-01'],
+    # Dates for production entries
+    'OIL_CUM': [100, 150, 200],  # Cumulative oil production values
+    'WATER_CUM': [50, 75, 100],  # Cumulative water production values
+    'GAS_CUM': [100, 150, 200],  # Cumulative gas production values
+    'LIQ_CUM': [150, 225, 300]  # Cumulative liquid production values
+})
+
+prod_df.set_index(prod_df['START_DATETIME'],
+                  inplace=True)  # Set the 'START_DATETIME' as the index of the DataFrame
+</code></pre>
+<pre><code>print(prod_df)
+</code></pre>
+<pre><code>               START_DATETIME  OIL_CUM  WATER_CUM  GAS_CUM  LIQ_CUM
+START_DATETIME                                                     
+2022-01-01         2022-01-01      100         50      100      150
+2022-02-01         2022-02-01      150         75      150      225
+2022-03-01         2022-03-01      200        100      200      300
+</code></pre>
+<pre><code>press_df = pd.DataFrame({  # Initialize a DataFrame with pressure data
+    'START_DATETIME': [&quot;2022-01-05&quot;, &quot;2022-01-26&quot;, &quot;2022-02-12&quot;],
+    # Dates for pressure entries
+    'PRESSURE_DATUM': [3000, 2930, 2900]  # Pressure values recorded
+})
+
+press_df.set_index(press_df['START_DATETIME'],
+                   inplace=True)  # Set the 'START_DATETIME' as the index of the DataFrame
+</code></pre>
+<pre><code>print(press_df)
+</code></pre>
+<pre><code>               START_DATETIME  PRESSURE_DATUM
+START_DATETIME                               
+2022-01-05         2022-01-05            3000
+2022-01-26         2022-01-26            2930
+2022-02-12         2022-02-12            2900
+</code></pre>
+<h3 id="3-create-prodvector-and-pressvector-instances">3. <em>Create ProdVector and PressVector instances</em></h3>
+<pre><code>prod_vector = ProdVector(data=prod_df,
+                         freq='MS')  # Create a ProdVector instance with monthly frequency
+
+press_vector = PressVector(data=press_df,
+                           freq=None)  # Create a PressVector instance without specified frequency
+</code></pre>
+<h3 id="4-create-an-instance-of-the-well-class">4. <em>Create an instance of the Well class</em></h3>
+<pre><code>well_instance = Well(name='Well_A', prod_data=prod_vector,
+                     # Instantiate Well with name and production data
+                     press_data=press_vector)  # Include pressure data in the Well instance
+</code></pre>
+<pre><code># Accessing the data
+print(f&quot;Well Name: {well_instance.name}&quot;)  # Print the name of the well
+print(&quot;Production Data:&quot;)  # Print header for production data
+print(well_instance.prod_data.data)  # Print the production data associated with the well
+print(&quot;Pressure Data:&quot;)  # Print header for pressure data
+print(well_instance.press_data.data)  # Print the pressure data associated with the well
+</code></pre>
+<pre><code>Well Name: Well_A
+Production Data:
+                OIL_CUM  WATER_CUM  GAS_CUM  LIQ_CUM
+START_DATETIME                                      
+2022-01-01        100.0       50.0    100.0    150.0
+2022-02-01        150.0       75.0    150.0    225.0
+2022-03-01        200.0      100.0    200.0    300.0
+Pressure Data:
+                PRESSURE_DATUM
+START_DATETIME                
+2022-01-05              3000.0
+2022-01-26              2930.0
+2022-02-12              2900.0
+</code></pre>
+<h2 id="how-to-create-multiple-wells"><strong>¿How to create multiple wells?</strong></h2>
+<p>It seems a bit tedious to develop a script with which you can create wells to
+develop your analysis, doesn't it?. Pytank offers two functions that will
+help you to speed up this information processing, as long as you take into
+account the format that your files must have, you can consult the information in
+the <em>format notes</em>, in pytank <a href="../quick_starter/">quick start guide</a>.
+More information on these two functions can be found in the documentation of the
+<a href="../../API/generated/helpers/">supporting functions</a>.</p>
+<h3 id="create-wells-functions"><strong>Create Wells Functions</strong></h3>
+<p>The <code>create_wells</code> function is responsible for creating a list of Well objects
+from the production and pressure data provided in the form of pandas DataFrames.
+This function processes the data, normalizes the frequencies and generates
+ProdVector and PressVector instances for each well.</p>
+<h3 id="search-for-your-wells"><strong>Search for your wells</strong></h3>
+<p>The <code>search_wells</code> function searches for wells in a list of existing wells based
+on the provided well names. It returns a list of Well objects matching the
+requested well names.</p>
+<h3 id="create-your-list-of-wells"><strong>Create your list of wells</strong></h3>
+<p>The two functions together will help you group the production and pressure
+information of the different wells you own. With this information processed you
+can use the other functions to develop your analysis as you see fit.</p>
+<p><strong>Let's see an example</strong></p>
+<pre><code>wells = create_wells(df_prod=df_production,
+                     df_press=df_pressures,
+                     freq_prod=&quot;MS&quot;,
+                     freq_press=None)
+</code></pre>
+<p><strong>List of wells for user selection</strong></p>
+<pre><code>my_wells = [
+    &quot;A-1-P&quot;, &quot;A-10-P&quot;, &quot;A-11-P&quot;, &quot;A-12-P&quot;, &quot;A-13-P&quot;, &quot;A-14-P&quot;, &quot;A-16-P&quot;,
+    &quot;A-17-P&quot;, &quot;A-18-P&quot;, &quot;A-19-P&quot;, &quot;A-21-P&quot;, &quot;A-22-P&quot;, &quot;A-23-P&quot;, &quot;A-24-I&quot;,
+    &quot;A-4-P&quot;, &quot;A-5-P&quot;, &quot;A-6-P&quot;, &quot;A-8-P&quot;, &quot;A-9-P&quot;
+]
+</code></pre>
+<p><strong>lis of wells with the pressure and production info for user selection</strong></p>
+<pre><code>wells_info = search_wells(wells, my_wells)
+</code></pre>
+<p>If you execute the order of the functions correctly, and you have formatted your
+dataset correctly, you will get a result similar to this from the list of your
+wells as objects.</p>
+<pre><code>Well(name='A-13-P', prod_data=ProdVector(is_result=False, 
+data_schema=&lt;Schema DataFrameSchema(columns={'OIL_CUM': 
+&lt;Schema Column(name=OIL_CUM, type=DataType(float64))&gt;, 'WATER_CUM': 
+&lt;Schema Column(name=WATER_CUM, type=DataType(float64))&gt;, 'GAS_CUM': 
+&lt;Schema Column(name=GAS_CUM, type=DataType(float64))&gt;, 'LIQ_CUM': 
+&lt;Schema Column(name=LIQ_CUM, type=DataType(float64))&gt;}, checks=[], parsers=[], 
+index=None, dtype=None, coerce=False, strict=filter, name=None, ordered=False, 
+unique=None, report_duplicates=all, unique_column_names=False, 
+add_missing_columns=False, title=None, description=None, metadata=None, 
+drop_invalid_rows=False)&gt;, freq='MS', use_pressure=False, data=                        
+START_DATETIME    OIL_CUM  WATER_CUM    GAS_CUM    LIQ_CUM                                      
+2002-11-01        6217.00     101.00    6217.00    6318.00
+2002-12-01       17310.00     575.00   17310.00   17885.00
+2003-01-01       30601.00     750.00   30601.00   31351.00
+2003-02-01       39152.00     978.00   39152.00   40130.00
+2003-03-01       46650.00    1234.00   46650.00   47884.00
+...                   ...        ...        ...        ...
+2015-08-01      456583.11   44371.24  456583.11  500954.35
+2015-09-01      456583.11   44371.24  456583.11  500954.35
+2015-10-01      456583.11   44371.24  456583.11  500954.35
+2015-11-01      456583.11   44371.24  456583.11  500954.35
+2015-12-01      456583.11   44371.24  456583.11  500954.35
+
+[158 rows x 4 columns]), press_data=PressVector(is_result=False, 
+data_schema=&lt;Schema DataFrameSchema(columns={'PRESSURE_DATUM': 
+&lt;Schema Column(name=PRESSURE_DATUM, type=DataType(float64))&gt;}, 
+checks=[], parsers=[], index=None, dtype=None, coerce=False, strict=filter, 
+name=None, ordered=False, unique=None, report_duplicates=all, 
+unique_column_names=False, add_missing_columns=False, title=None, 
+description=None, metadata=None, drop_invalid_rows=False)&gt;, freq=None, 
+use_pressure=False, data=                
+START_DATETIME  PRESSURE_DATUM              
+2002-11-06         2193.242118
+2002-12-03         2042.342826)), Well(name='A-10-P', 
+prod_data=ProdVector(is_result=False, data_schema=&lt;Schema 
+DataFrameSchema(columns={'OIL_CUM': &lt;Schema Column(name=OIL_CUM, 
+type=DataType(float64))&gt;, 'WATER_CUM': &lt;Schema Column(name=WATER_CUM, 
+type=DataType(float64))&gt;, 'GAS_CUM': &lt;Schema Column(name=GAS_CUM, 
+type=DataType(float64))&gt;, 'LIQ_CUM': &lt;Schema Column(name=LIQ_CUM, 
+type=DataType(float64))&gt;}, checks=[], parsers=[], index=None, dtype=None, 
+coerce=False, strict=filter, name=None, ordered=False, unique=None, 
+report_duplicates=all, unique_column_names=False, add_missing_columns=False, 
+title=None, description=None, metadata=None, drop_invalid_rows=False)&gt;, 
+freq='MS', use_pressure=False, data=                 
+TART_DATETIME    OIL_CUM  WATER_CUM   GAS_CUM    LIQ_CUM
+2008-08-01       3522.00    3466.00   3522.00    6988.00
+2008-09-01       4236.00    6105.00   4236.00   10341.00
+2008-10-01       6735.00    7254.00   6735.00   13989.00
+2008-11-01      11120.00    9280.00  11120.00   20400.00
+2008-12-01      15494.00   12474.00  15494.00   27968.00
+2009-01-01      20227.62   14561.16  20227.62   34788.78
+2009-02-01      24276.04   16492.68  24276.04   40768.72
+2009-03-01      29507.07   19851.19  29507.07   49358.26
+...                  ...        ...       ...        ...
+2012-04-01      78197.82   25030.04  78197.82  103227.86
+2012-05-01      80597.52   25367.31  80597.52  105964.83
+2012-06-01      82532.12   25646.75  82532.12  108178.87
+2012-07-01      84191.72   25895.33  84191.72  110087.05
+2012-08-01      84901.52   26000.87  84901.52  110902.39
+2012-09-01      84992.50   26305.73  84992.50  111298.23), 
+press_data=PressVector(is_result=False, data_schema=&lt;Schema 
+DataFrameSchema(columns={'PRESSURE_DATUM': 
+&lt;Schema Column(name=PRESSURE_DATUM, type=DataType(float64))&gt;}, 
+checks=[], parsers=[], index=None, dtype=None, coerce=False, strict=filter, 
+name=None, ordered=False, unique=None, report_duplicates=all, 
+unique_column_names=False, add_missing_columns=False, title=None, 
+description=None, metadata=None, drop_invalid_rows=False)&gt;, freq=None, 
+use_pressure=False, data=                
+START_DATETIME  PRESSURE_DATUM              
+2008-07-29          884.696858
+2008-07-31          884.696858))]
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+  </body>
+</html>
