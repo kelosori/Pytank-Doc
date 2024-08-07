@@ -1,7 +1,5 @@
 #**Welcome to PyTank**
 
-<img src="static/Icon-.png" alt="Image" style="width: auto; height: auto;">
-
 A tool for estimating the original volume of oil in reserves by using an
 object-oriented programming approach (POO).
 
