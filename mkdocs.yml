@@ -31,8 +31,8 @@ nav:
           - Vectors: nav/API/generated/vector_data.md
       - Additionals:
           - PVT Correlations: nav/API/generated/pvt_correlations.md
-          - Material Balance: nav/API/generated/mbal_api.md
-          - Utilities: nav/API/generated/others.md
+          - Material Balance: nav/API/generated/mb_api.md
+          - Utilities: nav/API/generated/utilities.md
 
 theme:
   name: material

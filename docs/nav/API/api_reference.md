@@ -57,7 +57,7 @@
 ## **Additional Functions**
 
 - **[PVT Correlations](generated/pvt_correlations.md)**
-- **[Material Balance](generated/mbal_api.md)**
-- **[Utilities](generated/others.md)**
+- **[Material Balance](generated/mb_api.md)**
+- **[Utilities](generated/utilities.md)**
 
 
