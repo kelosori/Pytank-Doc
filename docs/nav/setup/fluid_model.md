@@ -103,12 +103,12 @@ methods to estimate properties at specific pressures, facilitating informed
 decision-making.
 
 For more information on the OilModel class you can review its
-[documentation](/nav/API/generated/oil_model/).
+[documentation](../API/generated/oil_model.md).
 
 ### **WaterModel**
 
 The WaterModel class focuses on obtaining the PVT properties of water by using
-[PVT correlations](/nav/API/generated/pvt_correlations/). The key properties it
+[PVT correlations](../API/generated/pvt_correlations.md). The key properties it
 handles include:
 
 - ``Bw (Volumetric Water Factor)``: this factor is essential to understand how
@@ -126,7 +126,7 @@ properties in the reservoir, allowing a better understanding of how water
 interacts with oil and how it can be managed in the production process.
 
 For more information on the WaterModel class you can review its
-[documentation](/nav/API/generated/water_model/).
+[documentation](../API/generated/water_model.md).
 
 ### **Example of Use**
 
@@ -163,3 +163,4 @@ bo_value = oil_model.get_bo_at_press(3000)  # Bo interpolation at 3000 psi
 
 ```
 bw_value = water_model.get_bw_at_press(3000)  # Calculation of Bw at 3000 psi
+```

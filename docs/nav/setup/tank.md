@@ -51,15 +51,15 @@ operating conditions, which is crucial for production planning and hydrocarbon
 recovery optimization.
 
 For more information on the Tank class you can review its
-[documentation](/nav/API/tank_api/).
+[documentation](../API/generated/tank_api.md).
 
 ## **Let´s Create a Tank**
 
 In the first instance you must have created your `wells` to be able to perform
 the analysis as required, in case you do not have them created, you can go to
-[How to create a well?](/nav/setup/well/),also you must have developed the
+[How to create a well?](well.md),also you must have developed the
 respective fluid models for water and oil, in case you have not, take a look at
-[Which fluid models do I need?](/nav/setup/fluid_model/).
+[Which fluid models do I need?](fluid_model.md).
 
 ### 1. Creating a Tank
 

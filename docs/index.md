@@ -1,6 +1,6 @@
-# **Welcome to MkDocs**
+#**Welcome to PyTank**
 
-![Figure 1](/static/Icon.png)
+![Icon](./static/Icon-.png)
 
 A tool for estimating the original volume of oil in reserves by using an
 object-oriented programming approach (POO).
@@ -22,7 +22,7 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
         center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; 
         flex-direction: column; justify-content: space-around; 
         text-decoration: none; color: inherit;">
-        <img src="nav/_static/getting_started.svg" alt="Getting Started" 
+        <img src="nav/_static/index/getting_started.svg" alt="Getting Started" 
             style="width: 100%; height: 150px; object-fit: contain; 
             border-radius: 8px 8px 0 0;">
         <h3 style="font-weight: bold;">Getting Started</h3>
@@ -38,7 +38,7 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
         center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; 
         flex-direction: column; justify-content: space-around; 
         text-decoration: none; color: inherit;">
-        <img src="nav/_static/user_guide.svg" alt="User Guide" style="width: 
+        <img src="nav/_static/index/user_guide.svg" alt="User Guide" style="width: 
             100%; height: 150px; object-fit: contain; 
             border-radius: 8px 8px 0 0;">
         <h3 style="font-weight: bold;">User Guide</h3>
@@ -58,7 +58,7 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
         center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; 
         flex-direction: column; justify-content: space-around; 
         text-decoration: none; color: inherit;">
-        <img src="nav/_static/api.svg" alt="API Reference" style="width: 100%; 
+        <img src="nav/_static/index/api.svg" alt="API Reference" style="width: 100%; 
             height: 150px; object-fit: contain; 
             border-radius: 8px 8px 0 0;">
         <h3 style="font-weight: bold;">API Reference</h3>
@@ -75,7 +75,7 @@ visit [PyTank](https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git).
         box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; 
         flex-direction: column; justify-content: space-around; 
         text-decoration: none; color: inherit;">
-        <img src="nav/_static/dev_guide.svg" alt="Developer Guide" style="width: 
+        <img src="nav/_static/index/dev_guide.svg" alt="Developer Guide" style="width: 
             100%; height: 150px; object-fit: contain; 
             border-radius: 8px 8px 0 0;">
         <h3 style="font-weight: bold;">Developer Guide</h3>

@@ -2,7 +2,7 @@
 
 For now, full support is guaranteed for **Python 3.8** and higher. Support is
 partial for **Python 3.10**
-See [Develop Guide](/nav/develop/develop_guide/) for more details.
+See [Develop Guide](../nav/develop/develop_guide.md) for more details.
 
 ## **Installation**
 
@@ -23,7 +23,7 @@ See [Develop Guide](/nav/develop/develop_guide/) for more details.
         <p>A complete walkthrough for beginners and some instructions for 
             developers.</p>
         <a href="../develop/develop_guide" class="button" 
-            style="background-color: #fee440; color: white; padding: 10px 15px; 
+            style="background-color: #338dff; color: black; padding: 10px 15px; 
             border-radius: 5px; text-decoration: none;">Learn more</a>
     </div>
 </div>

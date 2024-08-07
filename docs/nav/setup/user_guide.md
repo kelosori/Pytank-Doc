@@ -1,4 +1,4 @@
-# **User Guide**
+# **Pytank Guide**
 
 ## **Table of Contents**
 
@@ -20,12 +20,12 @@ necessary tools to obtain more accurate results on the behavior of your data.
 
 Before you start using *Pytank*, make sure you have properly installed the
 package and all its dependencies. Detailed instructions can be found in the
-[Getting Started](/nav/getting_started/) section.
+[Getting Started](../getting_started.md) section.
 
 ## **3. Quick Started**
 
 If you feel ready, you can start using Pytank in a few minutes. We recommend you
-to refer to the [quick start guide](/nav/setup/quick_starter/) to familiarize
+to refer to the [quick start guide](../setup/quick_starter.ipynb) to familiarize
 yourself with the basic
 functionality and start exploring all that Pytank has to offer. I hope this
 version will be helpful for your documentation. If you need further tweaks or
@@ -33,8 +33,8 @@ additional information, don't hesitate to let me know
 
 ## **4. How to Create Your Items**
 
-- [How to create a Well?](/nav/setup/well/)
-- [Which fluid models do I need?](/nav/setup/fluid_model/)
-- [How to create a Tank?](/nav/setup/tank/)
-- [Analyzing with Pytank](/nav/setup/analysis/)
-- [Let´s create an Aquifer](/nav/setup/aquifer/)
+- [How to create a Well?](../setup/well.md)
+- [Which fluid models do I need?](../setup/fluid_model.md)
+- [How to create a Tank?](../setup/tank.md)
+- [Analyzing with Pytank](../setup/analysis.md)
+- [Let´s create an Aquifer](../setup/aquifer.md)

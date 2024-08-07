@@ -54,7 +54,7 @@ engineering.
 
 ## **Steps to create a well instance**
 
-### 1.- *Import Libraries*
+### 1. *Import Libraries*
 
 ```
 import pandas as pd # Import the pandas library for data manipulation
@@ -63,7 +63,7 @@ from pytank.vector_data import
 from pytank.well import Well # Import the Well class
 ```
 
-### 2.- *Create a sample DataFrame for production and pressure data*
+### 2. *Create a sample DataFrame for production and pressure data*
 
 ```
 prod_df = pd.DataFrame({  # Initialize a DataFrame with production data
@@ -114,7 +114,7 @@ START_DATETIME
 2022-02-12         2022-02-12            2900
 ```
 
-### 3.- *Create ProdVector and PressVector instances*
+### 3. *Create ProdVector and PressVector instances*
 
 ```
 prod_vector = ProdVector(data=prod_df,
@@ -124,7 +124,7 @@ press_vector = PressVector(data=press_df,
                            freq=None)  # Create a PressVector instance without specified frequency
 ```
 
-### 4.- *Create an instance of the Well class*
+### 4. *Create an instance of the Well class*
 
 ```
 well_instance = Well(name='Well_A', prod_data=prod_vector,
@@ -163,9 +163,9 @@ It seems a bit tedious to develop a script with which you can create wells to
 develop your analysis, doesn't it?. Pytank offers two functions that will
 help you to speed up this information processing, as long as you take into
 account the format that your files must have, you can consult the information in
-the *format notes*, in pytank [quick start guide](/nav/setup/quick_starter/).
+the *format notes*, in pytank [quick start guide](../setup/quick_starter.ipynb).
 More information on these two functions can be found in the documentation of the
-[supporting functions](/nav/API/helpers/).
+[supporting functions](../API/generated/helpers.md).
 
 ### **Create Wells Functions**
 

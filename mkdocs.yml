@@ -6,6 +6,7 @@ nav:
   - User Guide:
       - nav/setup/user_guide.md
       - nav/setup/quick_starter.ipynb
+      - nav/setup/advance_features.ipynb
       - Create your items:
           - How to create a Well?: nav/setup/well.md
           - Which fluid models do I need?: nav/setup/fluid_model.md
@@ -18,19 +19,23 @@ nav:
   - API reference:
       - Overview: nav/API/api_reference.md
       - Main Modules:
-          - Well: nav/API/well_api.md
-          - Fluid Model: nav/API/fluid_model_api.md
-          - Tank: nav/API/tank_api.md
-          - Aquifer: nav/API/aquifer_api.md
+          - Well: nav/API/generated/well_api.md
+          - Fluid Model: nav/API/generated/fluid_model_api.md
+          - Oil Model: nav/API/generated/oil_model.md
+          - Water: nav/API/generated/water_model.md
+          - Tank: nav/API/generated/tank_api.md
+          - Aquifer: nav/API/generated/aquifer_api.md
+          - Analysis: nav/API/generated/analysis_api.md
       - Secondary Modules:
-          - Helpers: nav/API/helpers.md
-          - Vectors: nav/API/vector_data.md
-
+          - Helpers: nav/API/generated/helpers.md
+          - Vectors: nav/API/generated/vector_data.md
+      - Others:
+          - PVT Correlations: nav/API/generated/pvt_correlations.md
 
 theme:
   name: material
-  favicon: static/Icon 2.ico
-  logo: static/Icon.png
+  favicon: ../static/Icon 2.ico
+  logo: ../static/Icon.png
   theme_style: light
   site_name_style: normal
   title_style: bold
@@ -50,13 +55,11 @@ plugins:
   - mkdocstrings
   - mkdocs-jupyter
 
-
 markdown_extensions:
   - attr_list
   - md_in_html
   - toc:
       permalink: false
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
 

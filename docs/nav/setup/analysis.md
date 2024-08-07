@@ -63,7 +63,7 @@ In a real case, many times there will be no information about the presence or ab
 an aquifer and its characteristics. If you do not have an accurate description of the
 aquifer, you cannot get a more realistic prediction of the behavior of the reservoir.
 
-![Figure 1](/static/campbell_plot.png)
+![Campbell](../_static/analysis_module/campbell_plot.png)
 
 - **<span style="color:sienna">Horizontal straight line</span>**: indicates a purely
   volumetric system without any water influx. The reservoir's energy comes exclusively
@@ -100,7 +100,7 @@ establishing a relationship between the original volume of hydrocarbons and the 
 produced, as well as the changes in the properties of the fluids throughout the
 production process. This equation can be expressed as follows:
 
-![EBM](/static/material_balance_terms.png)
+![EBM](../_static/analysis_module/material_balance_terms.png)
 
 To apply the material balance equation, the following must be considered:
 
@@ -154,7 +154,7 @@ the behavior of an under saturated reservoir, in which the fluids produced by th
 reservoir (F) are related to the expansion of the fluids (Eo + Efw), where it is assumed
 that the slope must be an approximate value to the OOIP (N).
 
-![ho_ru](/static/ho_reservoir_undersaturated.png)
+![ho_ru](../_static/analysis_module/ho_reservoir_undersaturated.png)
 
 The Havlena-Odeh method is essential in material balance analysis for the
 following reasons:
@@ -269,4 +269,4 @@ fig_pressure = tank.analytic_method(poes=5000, option=“plot”)
 ```
 
 For more information on the Analysis class you can review its
-[documentation](/nav/API/analysis_api/).
+[documentation](../API/generated/analysis_api.md).
