@@ -1,12 +1,5 @@
 # **Pytank Guide**
 
-## **Table of Contents**
-
-1. [Introduction](#1-introduction)
-2. [Installation](#2-installation)
-3. [Quick Started](#3-quick-started)
-4. [Create Your Items](#4-how-to-create-your-items)
-
 ## **1. Introduction**
 
 The main objective of this guide is to guide you in the use of the various

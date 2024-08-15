@@ -260,11 +260,11 @@ Usage: this function allows to calculate the inferred POES and compare the obser
 pressure with the calculated pressure, using aquifer models such as Fetkovich and
 Carter-Tracy. This is essential to validate the reservoir model and optimize production.
 
-```
+```yaml
 pressure_data = tank.analytic_method(poes=5000, option=“data”)
 ```
 
-```
+```yaml
 fig_pressure = tank.analytic_method(poes=5000, option=“plot”)
 ```
 

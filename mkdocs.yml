@@ -1,22 +1,122 @@
+# Project information
 site_name: PyTank
+site_url: http://pytank-doc.readthedocs.io/
+site_author: Kevin Lopez
+site_description: >-
+  Python + Reservoir Engineering = Pytank
+  Estimate hydrocarbon reserves with this tool, implementing material balance.
 
+# Repository
+repo_name: ESPOL-FICT/PYTANK
+repo_url: https://github.com/ESPOL-FICT-PETROLEOS/PYTANK
+
+
+# Copyright
+copyright: Copyright &copy; 2024 Kevin Lopez
+
+# Configuration
+theme:
+  name: material
+  # custom_dir: pydoc/overrides
+  features:
+    - announce.dismiss
+    - content.action.view
+    - content.action.edit
+    - content.action.annotate
+    - content.action.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.expands
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-6
+        name: Switch to system preference
+  font:
+    text: Ubuntu
+    code: Ubuntu
+  favicon: static/Icon 2.ico
+  logo: static/Icon.png
+
+# Plugins
+plugins:
+  - mkdocstrings
+  - mkdocs-jupyter
+  - search
+  - minify:
+      minify_html: true
+
+# Additional configuration
+extra:
+  homepage: http://pytank-doc.readthedocs.io/
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/kelosori
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/Pytank/
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - footnotes
+  - def_list
+  - attr_list
+  - md_in_html
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - toc:
+      permalink: false
+
+
+# Page tree
 nav:
   - Home: index.md
   - Getting Started: nav/getting_started.md
   - User Guide:
-      - nav/setup/user_guide.md
-      - nav/setup/quick_starter.ipynb
-      - nav/setup/advance_features.ipynb
-      - Create your items:
-          - How to create a Well?: nav/setup/well.md
-          - Which fluid models do I need?: nav/setup/fluid_model.md
-          - How to create a Tank?: nav/setup/tank.md
-          - Analyzing with Pytank: nav/setup/analysis.md
-          - Let´s create an Aquifer: nav/setup/aquifer.md
+      - Setup:
+          - User Guide: nav/setup/user_guide.md
+          - Quick Starter: nav/setup/quick_starter.ipynb
+          - Advanced Features: nav/setup/advance_features.ipynb
+      - Create Your Items:
+          - How to Create a Well?: nav/setup/well.md
+          - Fluid Models Needed: nav/setup/fluid_model.md
+          - How to Create a Tank?: nav/setup/tank.md
+          - Analyzing with PyTank: nav/setup/analysis.md
+          - Creating an Aquifer: nav/setup/aquifer.md
   - Development:
-      - nav/develop/develop_guide.md
-      - nav/develop/release_notes.md
-  - API reference:
+      - Development Guide: nav/develop/develop_guide.md
+      - Release Notes: nav/develop/release_notes.md
+  - API Reference:
       - Overview: nav/API/api_reference.md
       - Main Modules:
           - Well: nav/API/generated/well_api.md
@@ -29,65 +129,14 @@ nav:
       - Secondary Modules:
           - Helpers: nav/API/generated/helpers.md
           - Vectors: nav/API/generated/vector_data.md
-      - Additionals:
+      - Additional Resources:
           - PVT Correlations: nav/API/generated/pvt_correlations.md
           - Material Balance: nav/API/generated/mb_api.md
           - Utilities: nav/API/generated/utilities.md
 
-theme:
-  name: material
-  palette:
-      # Palette toggle for automatic mode
-      - media: "(prefers-color-scheme)"
-        toggle:
-          icon: material/brightness-auto
-          name: Switch to light mode
 
-      # Palette toggle for light mode
-      - media: "(prefers-color-scheme: light)"
-        scheme: default
-        primary: light green
-        toggle:
-          icon: material/brightness-7
-          name: Switch to dark mode
 
-      # Palette toggle for dark mode
-      - media: "(prefers-color-scheme: dark)"
-        scheme: slate
-        primary: white
-        toggle:
-          icon: material/brightness-4
-          name: Switch to system preference
-
-  favicon: static/Icon 2.ico
-  logo: static/Icon.png
-  theme_style: light
-  site_name_style: normal
-  title_style: bold
-  colors:
-    text: black
-    title: black
-    primary: black
-    background: white
-  components:
-    site_name: true
-    title: false
-    menu: true
-    preview: true
-    footer: true
-
-plugins:
-  - mkdocstrings
-  - mkdocs-jupyter
-
-markdown_extensions:
-  - attr_list
-  - md_in_html
-  - toc:
-      permalink: false
-
-extra:
-  homepage: index.md
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js
