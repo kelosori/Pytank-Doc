@@ -67,8 +67,6 @@ plugins:
   - mkdocstrings
   - mkdocs-jupyter
   - search
-  - minify:
-      minify_html: true
 
 # Additional configuration
 extra:
