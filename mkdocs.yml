@@ -33,6 +33,7 @@ theme:
     - navigation.top
     - navigation.expands
     - navigation.tracking
+    - navigation.path
     - search.highlight
     - search.share
     - search.suggest
@@ -74,8 +75,16 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/kelosori
+      name: Pytank Documentation
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/Pytank/
+      name: Pytank in Pypi
+    - icon: fontawesome/brands/github
+      link: https://github.com/ESPOL-FICT-PETROLEOS/PYTANK.git
+      name: Pytank Code
+    - icon: fontawesome/brands/webflow
+      link: https://pytank-view.onrender.com/
+      name: Pytank View
 
 # Extensions
 markdown_extensions:
@@ -85,6 +94,10 @@ markdown_extensions:
   - def_list
   - attr_list
   - md_in_html
+  - toc:
+      permalink: false
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.snippets
   - pymdownx.inlinehilite
   - pymdownx.superfences
@@ -92,8 +105,6 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - toc:
-      permalink: false
 
 
 # Page tree
@@ -118,7 +129,10 @@ nav:
       - Overview: nav/API/api_reference.md
       - Main Modules:
           - Well: nav/API/generated/well_api.md
-          - Fluid Model: nav/API/generated/fluid_model_api.md
+          - Fluid Model:
+              - Main: nav/API/generated/fluid_model_api.md
+              - Oil Model: nav/API/generated/oil_model.md
+              - Water Model: nav/API/generated/water_model.md
           - Oil Model: nav/API/generated/oil_model.md
           - Water: nav/API/generated/water_model.md
           - Tank: nav/API/generated/tank_api.md
