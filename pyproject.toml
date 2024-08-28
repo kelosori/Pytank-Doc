@@ -16,8 +16,8 @@ black = "^24.4.2"
 jupyter = "^1.0.0"
 mkdocs-jupyter = "^0.24.8"
 pymdown-extensions = "^10.9"
-pytank = "^0.1.4"
 griffe = "^1.2.0"
+pytank = "^0.1.3"
 
 
 [build-system]
