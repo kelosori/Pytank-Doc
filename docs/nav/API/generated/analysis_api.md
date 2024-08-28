@@ -1,2 +1,2 @@
 # **Analysis Module**
-::: pytank.analysis
+::: pytank.aquifer_model
