@@ -65,7 +65,7 @@ theme:
 
 # Plugins
 plugins:
-  - mkdocstrings
+  #- mkdocstrings
   - mkdocs-jupyter
   - search
 
@@ -138,7 +138,6 @@ nav:
           - Water: nav/API/generated/water_model.md
           - Tank: nav/API/generated/tank_api.md
           - Aquifer: nav/API/generated/aquifer_api.md
-          - Analysis: nav/API/generated/analysis_api.md
       - Secondary Modules:
           - Helpers: nav/API/generated/helpers.md
           - Vectors: nav/API/generated/vector_data.md
