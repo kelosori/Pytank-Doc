@@ -19,7 +19,6 @@ pymdown-extensions = "^10.9"
 griffe = "^1.2.0"
 pytank = "^0.1.5"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -29,3 +28,6 @@ JUPYTER_PLATFORM_DIRS = 1
 filterwarnings = [
     "ignore:The `name` parameter is deprecated.:DeprecationWarning:griffe.docstrings.google"
 ]
+
+[tool.poetry.scripts]
+pytank = 'main:main'
