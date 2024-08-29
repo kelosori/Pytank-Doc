@@ -118,9 +118,10 @@ nav:
       - Overview: nav/API/api_reference.md
       - Main Modules:
           - Well: nav/API/generated/well_api.md
-          - Fluid Model: nav/API/generated/fluid_model_api.md
-          - Oil Model: nav/API/generated/oil_model.md
-          - Water: nav/API/generated/water_model.md
+          - Fluid Model:
+            - main: nav/API/generated/fluid_model_api.md
+            - Oil Model: nav/API/generated/oil_model.md
+            - Water: nav/API/generated/water_model.md
           - Tank: nav/API/generated/tank_api.md
           - Aquifer: nav/API/generated/aquifer_api.md
           - Analysis: nav/API/generated/analysis_api.md
